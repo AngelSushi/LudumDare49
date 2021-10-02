@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public bool isInEnigma;
+    public DialogController dialogController;
 
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        if(!isInEnigma && !dialogController.isInDialog)
+            rb.velocity = movement * moveSpeed;
     }
 
     void MovementInput ()

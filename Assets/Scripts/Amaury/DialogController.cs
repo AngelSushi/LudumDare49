@@ -40,12 +40,6 @@ public class DialogController : MonoBehaviour {
     void Start() {
         originalSpeed = speed;
         dialogs = JsonUtility.FromJson<DialogArray>(dialogsFile.text);
-
-        Dialog dialog = GetDialogByName("StartSprintTutorial");
-        currentDialog = dialog;
-        isInDialog = true;
-
-        StartCoroutine(ShowText(dialog.Content[0],dialog.Content.Length));
     }
 
     void Update() {

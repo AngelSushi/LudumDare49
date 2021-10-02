@@ -16,26 +16,30 @@ public class FormCollision : MonoBehaviour {
     }
 
     void Update() {
-        if(isMooving) {
-            Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
-            transform.position = cameraPos;
-        }
-        else if(!collide) {
-            transform.position = originalPos;
-            collide = false;
+        if(enigma.isInProgress) {
+            if(isMooving) {
+                Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
+                transform.position = cameraPos;
+            }
+            else if(!collide) {
+                transform.position = originalPos;
+                collide = false;
+            }
         }
     }
 
     void OnMouseDown() {
-        isMooving = true;
+        if(enigma.isInProgress) 
+            isMooving = true;
     }
 
     void OnMouseUp() {
-        isMooving = false;
+        if(enigma.isInProgress) 
+            isMooving = false;
     }
 
     private void OnCollisionStay2D(Collision2D hit) {
-        if(hit.gameObject.tag == "ResultArea") {
+        if(hit.gameObject.tag == "ResultArea" && enigma.isInProgress) {
             if(!isMooving && !isPlaced) {
                 int index = hit.gameObject.transform.GetSiblingIndex();
                 Vector3 newPosition = hit.gameObject.transform.position;
@@ -50,7 +54,7 @@ public class FormCollision : MonoBehaviour {
     }
 
     private void OnCollisionExit2D(Collision2D hit) {
-        if(hit.gameObject.tag == "ResultArea") {
+        if(hit.gameObject.tag == "ResultArea" && enigma.isInProgress) {
             if(collide)
                 collide = false;
             if(isPlaced)
