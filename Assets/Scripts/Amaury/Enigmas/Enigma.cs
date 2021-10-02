@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enigma : MonoBehaviour {
+public class Enigma : CoroutineSystem {
     public bool isAvailable;
     public bool isFinish;
     public bool isInProgress;

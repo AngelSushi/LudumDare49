@@ -504,6 +504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 4
   enigma: {fileID: 1822407486}
 --- !u!61 &246430702
@@ -1235,6 +1238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 3
   enigma: {fileID: 1822407486}
 --- !u!61 &904109647
@@ -1279,7 +1285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &910401660
 Transform:
   m_ObjectHideFlags: 0
@@ -1643,6 +1649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 5
   enigma: {fileID: 1822407486}
 --- !u!61 &1179164141
@@ -1928,6 +1937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 1
   enigma: {fileID: 1822407486}
 --- !u!1 &1469919062
@@ -2129,6 +2141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 0
   enigma: {fileID: 1822407486}
 --- !u!1 &1494942959
@@ -2443,7 +2458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1822407484
 Transform:
   m_ObjectHideFlags: 0
@@ -2481,6 +2496,14 @@ MonoBehaviour:
   - {fileID: 910401659}
   maxFormCount: 6
   maxCodeSize: 3
+  timeToWait: 1
+  formCollisions:
+  - {fileID: 1486609954}
+  - {fileID: 1461814333}
+  - {fileID: 2123092783}
+  - {fileID: 904109646}
+  - {fileID: 246430701}
+  - {fileID: 1179164140}
   findCode: ffffffffffffffffffffffff
 --- !u!1 &2025756561
 GameObject:
@@ -2754,5 +2777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40a6aba3da351147a069f3642d55b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMooving: 0
+  isPlaced: 0
+  originalPos: {x: 0, y: 0, z: 0}
   type: 2
   enigma: {fileID: 1822407486}

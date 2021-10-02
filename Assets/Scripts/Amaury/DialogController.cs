@@ -11,8 +11,6 @@ public class Dialog {
     public string Author;
     public string Name;
     public string[] Content;
-    public bool NeedAnswer;
-    public string[] Answers;
     public bool isFinish;
 }
 
@@ -94,7 +92,7 @@ public class DialogController : MonoBehaviour {
         }
 
         if((length > 1 && index == length) || (length == 1)) 
-             finish = true;
+            finish = true;
     }
 
     void EndDialog() {

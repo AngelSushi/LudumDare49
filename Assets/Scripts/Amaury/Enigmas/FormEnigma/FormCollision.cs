@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class FormCollision : MonoBehaviour {
 
-    private bool isMooving;
-    private bool isPlaced;
+    public bool isMooving;
+    public bool isPlaced;
     private bool collide;
-    private Vector3 originalPos;
+    public Vector3 originalPos;
     public FormType type;
     public FormEnigma enigma;
 
@@ -39,16 +38,11 @@ public class FormCollision : MonoBehaviour {
         if(hit.gameObject.tag == "ResultArea") {
             if(!isMooving && !isPlaced) {
                 int index = hit.gameObject.transform.GetSiblingIndex();
-
-                if(enigma.secretCode.ContainsKey((int)type) && type == enigma.secretCode.Values.ToArray()[index]) {
-                    Vector3 newPosition = hit.gameObject.transform.position;
-                    newPosition.z = -2;
-                    transform.position = newPosition;
-                    isPlaced = true;
-                    enigma.UpdateFindCode(index,(int)type);
-                }
-                else 
-                    transform.position = originalPos;
+                Vector3 newPosition = hit.gameObject.transform.position;
+                newPosition.z = -2;
+                transform.position = newPosition;
+                isPlaced = true;
+                enigma.UpdateFindCode(index,(int)type);
             }
             else if(isMooving) 
                 collide = true;     

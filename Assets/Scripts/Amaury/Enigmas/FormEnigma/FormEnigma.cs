@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FormEnigma : Enigma {
     
     public int maxFormCount;
     public int maxCodeSize;
+    public float timeToWait;
     public Dictionary<int,FormType> secretCode;
+    public List<FormCollision> formCollisions;
     public int[] findCode = {-1,-1,-1};
 
     void Start() {
@@ -38,15 +41,44 @@ public class FormEnigma : Enigma {
     public void UpdateFindCode(int index,int value) {
         findCode[index] = value;
 
-        isFinish = HasFinish();
-    }
+        if(HasComplete()) {
+            RunDelayed(timeToWait,() => {
+                isFinish = IsFinish();
+                if(!isFinish) {
+                    foreach(int type in findCode) {
+                        GameObject targetForm = GetObjectByType(type);
+                        targetForm.transform.position = targetForm.GetComponent<FormCollision>().originalPos;
+                    }
 
-    public bool HasFinish() {
+                    findCode = new int[3]{-1,-1,-1};
+                }
+            });
+        }
+    }
+    public bool HasComplete() {
         foreach(int code in findCode) {
             if(code == -1)
                 return false;
         }
 
         return true;
+    }
+
+    public bool IsFinish() {
+        for(int i = 0;i<findCode.Length;i++) {
+            if(findCode[i] != (int)secretCode.Values.ToArray()[i])
+                return false;
+        }
+
+        return true;
+    }
+
+    private GameObject GetObjectByType(int type) {
+        foreach(FormCollision c in formCollisions) {
+            if((int)c.type == type)
+                return c.gameObject;
+        }
+
+        return null;
     }
 }

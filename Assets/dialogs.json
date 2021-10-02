@@ -6,9 +6,7 @@
 			"Name": "StartTextAlpha",
 			"Content": [
 				"Ce jeu est encore en phase de développement. Les personnages,décors et autres assets sont susceptibles d'être modifiés par la suite. Bon jeu à vous ! "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
         },
 		
 		{
@@ -16,9 +14,7 @@
 			"Name": "EndTextAlpha",
 			"Content": [
 				"Le jeu s'arrête pour l'instant ici. Si vous voulez rejouer, vous pouvez relancer le jeu. Merci à vous d'avoir joué :) "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		
 		},
 		
@@ -27,10 +23,6 @@
 			"Name": "AskTextTutorial",
 			"Content": [
 				"Avant toute chose un didacticiel est disponible. Souhaites-tu le faire ?"
-			],
-			"NeedAnswer": true,
-			"Answers": [
-				"Oui\nNon"
 			]
 		},
 		
@@ -40,9 +32,7 @@
 			"Content": [
 				"Très bien je vois que tu es novice et que tu souhaites avoir une petite aide.",
 				"Pour commencer, marche devant toi avec ZQSD "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		},
 		{
 			"Author": "Pirate",
@@ -50,9 +40,7 @@
 			"Content": [
 				"Bravo, tu sais désormais te déplacer. Voyons maintenant comment te déplacer plus vite. Tu peux sprinter avec A. ",
 				"Tu peux sprinter avec ta touche A. Rends toi au deux prochains cercles en sprintant. "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		
 		},
 		
@@ -62,9 +50,7 @@
 			"Content": [
 				"Parfait. Je vois que tu sais désormais te déplacer. Maintenant passons au saut.",
 				"Tu vois la caisse là-bas ? Rends toi dessus et essaye de sauter sur la caisse."
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		
 		},
 		{
@@ -72,10 +58,6 @@
 			"Name": "EndTutorial",
 			"Content": [
 				"Bravo, tu viens de finir le tutoriel avec succès. Veux tu le recommencer ? "
-			],
-			"NeedAnswer": true,
-			"Answers": [
-				"Oui\nNon"
 			]
 		},
 		
@@ -84,10 +66,6 @@
 			"Name": "AskChestBuy",
 			"Content": [
 				"Voulez-vous ouvrir le coffre ?"
-			],
-			"NeedAnswer": true,
-			"Answers": [
-				"Oui\nNon"
 			]
 		},
 
@@ -96,10 +74,6 @@
 			"Name": "QuitGame",
 			"Content": [
 				"Ëtes vous sur de vouloir quitter ? Vos données seront sauvegardées et vous pourrez relancer la partie."
-			],
-			"NeedAnswer": true,
-			"Answers": [
-				"Oui\nNon"
 			]
 		},
 		
@@ -108,9 +82,7 @@
 			"Name": "FindNewCode",
 			"Content": [
 				"Vous venez de débloquer un nouveau chiffre du code secret. Il s'agit du chiffre %n. Il vous reste %b chiffre(s) à trouver. "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		},
 		
 		{
@@ -118,9 +90,7 @@
 			"Name": "FindAllSecretCode",
 			"Content": [
 				"Vous venez de trouver l'intégralité du code secret. Vous pouvez vous rendre à la grotte. "
-			],
-			"NeedAnswer": false,
-			"Answers": []
+			]
 		
 		}
     ]
