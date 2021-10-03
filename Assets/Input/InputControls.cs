@@ -57,11 +57,11 @@ public class @InputControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""dba1000d-53a3-47f4-81f0-8ee910cd8ece"",
+                    ""id"": ""398920e1-2ded-4470-bb68-3aa26cbe8347"",
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

@@ -7,9 +7,9 @@ public class UserInventory : MonoBehaviour {
     public List<GameObject> possededObjects;
 
     private void OnTriggerEnter2D(Collider2D hit) {
-        if(hit.gameObject.tag == "Object") {
+        if(hit.gameObject.tag == "Object" && !possededObjects.Contains(hit.gameObject)) {
             possededObjects.Add(hit.gameObject);
-            hit.gameObject.SetActive(false);
+           // hit.gameObject.SetActive(false);
         }
     }
 }
