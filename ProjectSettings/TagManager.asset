@@ -6,6 +6,45 @@ TagManager:
   tags:
   - ResultArea
   - Object
+  - CutScene1
+  - Vide
+  - FirstTime
+  - Walls
+  - Ghost1_sentence1
+  - Ghost2_sentence1
+  - Ground
+  - Knife
+  - Chandelur
+  - FastFood
+  - Forks
+  - Pan
+  - Enigma1_wrong
+  - Enigma1_right
+  - doorLocked_Downstairs
+  - tries_Upstairs
+  - FemaleGhost1_sentence1
+  - LockedDoors_Upstairs
+  - Missing
+  - GhostInTheBed1
+  - GhostInTheBed2
+  - NightStand
+  - Handle
+  - PurchasingGhost1
+  - PurchasingGhost2
+  - Classic
+  - FemaleGhost1_sentence3
+  - DeepDown
+  - Electric_sentence1
+  - Sherlock
+  - Electric_sentence2
+  - OpenTheDoor
+  - Picture
+  - Ghost1_sentence3
+  - Ghost2_sentence2
+  - GhostInTheBed1_sentence2
+  - GhostInTheBed2_sentence2
+  - FemaleGhost2
+  - Out
   layers:
   - Default
   - TransparentFX

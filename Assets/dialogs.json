@@ -477,12 +477,12 @@
         },
         {
             "Author": "System",
-            "Name": "Out",
+            "Name": "lostAgain",
             "Content": [
                 "Once again let's do our job "
             ],
             "Texture": "neutre",
-            "Tag": "Out",
+            "Tag": "lostAgain",
         }
     ]
 }	
