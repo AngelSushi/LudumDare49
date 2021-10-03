@@ -12,23 +12,39 @@ public class Enemy : MonoBehaviour
     {
         if (target != null)
         {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            StartCoroutine(WaitToStep());
+
         }
+        else
+        {
+            StopAllCoroutines();
+        }
+    }
+
+
+
+  
+
+ 
+
+    public IEnumerator WaitToStep()
+    {
+        yield return new WaitForSeconds(3f);
+        float step = speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+       
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-          
+
             target = col.transform;
-           
-            
+
+
         }
     }
-
-  
 
     private void OnTriggerExit2D(Collider2D col)
     {

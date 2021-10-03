@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Maxime/SCENE/SCENEMax.unity
+    guid: 29ca8069082533e42b0b70efa9dc3a93
+  - enabled: 1
+    path: Assets/Scenes/Maxime/SCENE/ETAGEZER.unity
+    guid: f1f4a5ceb45a9f94381704960b7d6b58
   m_configObjects: {}
