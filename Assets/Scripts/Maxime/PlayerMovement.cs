@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    public Animator animator;
+    //public Animator animator;
 
     public bool isInEnigma;
     public DialogController dialogController;
@@ -19,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementInput();
         float charaterVelocity = Mathf.Abs(rb.velocity.x);
 
 
@@ -32,11 +32,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = movement * moveSpeed;
     }
 
-    void MovementInput ()
-    {
-        float mx = Input.GetAxisRaw("Horizontal");
-        float my = Input.GetAxisRaw("Vertical");
 
-        movement = new Vector2(mx, my).normalized;
+
+    public void OnMove(InputAction.CallbackContext e) {
+        Debug.Log("enter");
+        movement = e.ReadValue<Vector2>().normalized;
     }
 }

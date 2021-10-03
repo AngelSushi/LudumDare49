@@ -1,176 +1,29 @@
 {
 "dialogs": 
     [
-        //Les deux premières CutScene
         {
-                        "Author": "System",
-            "Name": "CutScene1",
-            "Content": [
-                "Once again, let’s do our job "
-                "Ok I’ll start here "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "CutScene1"
+                "Author": "System",
+                "Name": "StartTextAlpha",
+                "Content": [
+                    "Once again, letâ€™s do our job ",
+                    "ok Iâ€™ll start here "
+                ],
+                "Texture": "tete_content",
+                "Tag": "Finish",
+                "Answer": "TextAlpha"
 
         },
-        
-         {
-                        "Author": "System",
-            "Name": "CutScene2",
+
+        {
+            "Author": "System",
+            "Name": "TextAlpha",
             "Content": [
-                "At least, it’s not going to be hard to find proofs "
-                "Ok buddy, do what you are the best for "
+                "Wsh frÃ©rot ",
+                "bien ou bien "
             ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "CutScene2"
+            "Texture": "nomdelatexture",
+            "Tag": "Other"
 
         }
-        //Premier passage en mode fantome
-        {
-                        "Author": "System",
-            "Name": "FirstTime",
-            "Content": [
-                "Some spirits remains, let's talk to them "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": ""
-
-        }
-        //Toutes les répliques pour les indices de l'énigme 1 en mode humain
-        {
-                        "Author": "System",
-            "Name": "Blood",
-            "Content": [
-                "No blood on the walls "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Blood"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Ground",
-            "Content": [
-                "A lot of blood.. "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Ground"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Knife",
-            "Content": [
-                "One knife is missing "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Knife"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Chandelur",
-            "Content": [
-                "That reminds me of something "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Chandelur"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "FastFood",
-            "Content": [
-                "Shitty fast food, it may not even have to be poisoned to kill them "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "FastFood"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Forks",
-            "Content": [
-                "those knifes and forks are bloody, did they fight each other's? "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Forks"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Pan",
-            "Content": [
-                "Can we use that as a weapon? "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Pan"
-
-        },
-        // Toutes les répliques pour l'énigme 1 en mode fantome
-        {
-                        "Author": "System",
-            "Name": "Ghost_Number_1",
-            "Content": [
-                "it was all fine, and suddenly the lights turned off, and after... after? "
-                "AFTER? "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Ghost_Number_1"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Ghost_Number_2",
-            "Content": [
-                "All I remember was fear and something cold on my neck "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Ghost_Number_2"
-
-        },
-        //Quand il met ensemble les différents indices pour faire des déduction
-        {
-                        "Author": "System",
-            "Name": "Enigma1_wrong",
-            "Content": [
-                "Focus! "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Enigma1_wrong"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "Enigma1_right",
-            "Content": [
-                "Ok, so, this asshole turns off the lights and then kills them all sneakly with a knife "
-                "he had planned his shot "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "Enigma1_right"
-
-        },
-        //Interactions avec l'environnement disponible pendant l'énigme1
-        {
-                        "Author": "System",
-            "Name": "lockedDoor_downstairs",
-            "Content": [
-                "of course it's locked damn it "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "lockedDoor_downstairs"
-
-        },
-        {
-                        "Author": "System",
-            "Name": "triesUpstairs",
-            "Content": [
-                "One at a time, let's start here "
-            ],
-                        "Texture": "nomdelatexture",
-                        "Tag": "triesUpstairs"
-
-        },
     ]
 }	

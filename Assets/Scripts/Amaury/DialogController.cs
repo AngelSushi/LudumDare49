@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class Dialog {
@@ -11,9 +12,9 @@ public class Dialog {
     public string Author;
     public string Name;
     public string[] Content;
-    public bool isFinish;
     public string Texture;
     public string Tag;
+    public string Answer;
 }
 
 [System.Serializable]
@@ -45,25 +46,32 @@ public class DialogController : MonoBehaviour {
         dialogs = JsonUtility.FromJson<DialogArray>(dialogsFile.text);
     }
 
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
-            OnInteract();
-        
-        if((Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.JoystickButton0) ) && isInDialog) 
-            AccelerateDialog(accelerate);       
-        else if(!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.JoystickButton0)) && isInDialog) 
-            AccelerateDialog(originalSpeed);       
-    }
+    public void OnInteract(InputAction.CallbackContext e) { 
+        Debug.Log("enter");
+        if(e.started && isInDialog) {
+            if( !nextPage) 
+                AccelerateDialog(accelerate);
+            if(nextPage && !finish) {
+                nextPage = false;
+                nextObj.gameObject.SetActive(false);
+                StartCoroutine(ShowText(currentDialog.Content[index],currentDialog.Content.Length));
+            }
 
-    public void OnInteract() { 
-        if(nextPage && isInDialog && !finish) {
-            nextPage = false;
-            nextObj.gameObject.SetActive(false);
-            StartCoroutine(ShowText(currentDialog.Content[index],currentDialog.Content.Length));
-        }
+            if(finish) {
+                if(currentDialog.Answer != null) {
+                    index = 0;
+                    finish = false;
+                    currentDialog = GetDialogByName(currentDialog.Answer);
+                    StartCoroutine(ShowText(currentDialog.Content[0],currentDialog.Content.Length)); 
+                }
+                else 
+                    EndDialog();
+            } 
+        }   
 
-        if(finish) 
-            EndDialog();                   
+        if(e.canceled) 
+            AccelerateDialog(originalSpeed);   
+                   
     }
 
     void AccelerateDialog(float accelerate) {
@@ -103,7 +111,6 @@ public class DialogController : MonoBehaviour {
         text.text = "";
         isInDialog = false;
         finish = false;
-        currentDialog.isFinish = true;
     }
 
     public Dialog GetDialogByName(string name) {
