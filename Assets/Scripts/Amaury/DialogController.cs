@@ -12,6 +12,8 @@ public class Dialog {
     public string Name;
     public string[] Content;
     public bool isFinish;
+    public string Texture;
+    public string Tag;
 }
 
 [System.Serializable]
@@ -24,6 +26,7 @@ public class DialogController : MonoBehaviour {
     public bool isInDialog;
     public Text text;
     public Text nextObj;
+    public Image head;
     public GameObject dialogObj;
     public DialogArray dialogs;
     public bool finish = false;
@@ -40,12 +43,6 @@ public class DialogController : MonoBehaviour {
     void Start() {
         originalSpeed = speed;
         dialogs = JsonUtility.FromJson<DialogArray>(dialogsFile.text);
-
-        Dialog dialog = GetDialogByName("StartSprintTutorial");
-        currentDialog = dialog;
-        isInDialog = true;
-
-        StartCoroutine(ShowText(dialog.Content[0],dialog.Content.Length));
     }
 
     void Update() {
@@ -78,6 +75,7 @@ public class DialogController : MonoBehaviour {
         dialogObj.SetActive(true);
         text.gameObject.SetActive(true);
         nextObj.gameObject.SetActive(false);
+        head.sprite = Resources.Load<Sprite>(currentDialog.Texture);
 
         for(int i = 1;i<displayText.Length;i++) {
            yield return new WaitForSeconds(speed);

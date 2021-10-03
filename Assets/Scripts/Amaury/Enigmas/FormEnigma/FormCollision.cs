@@ -10,39 +10,47 @@ public class FormCollision : MonoBehaviour {
     public Vector3 originalPos;
     public FormType type;
     public FormEnigma enigma;
-
+    public TakeObject myObj;
+    
     void Start() {
         originalPos = transform.position;
     }
 
     void Update() {
-        if(isMooving) {
-            Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
-            transform.position = cameraPos;
-        }
-        else if(!collide) {
-            transform.position = originalPos;
-            collide = false;
+        if(enigma.isInProgress) {
+            if(isMooving) {
+                Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
+                transform.position = cameraPos;
+            }
+            else if(!collide) {
+                transform.position = originalPos;
+                collide = false;
+            }
         }
     }
 
     void OnMouseDown() {
-        isMooving = true;
+        if(enigma.isInProgress) 
+            isMooving = true;   
     }
 
     void OnMouseUp() {
-        isMooving = false;
+        if(enigma.isInProgress) 
+            isMooving = false;
     }
 
     private void OnCollisionStay2D(Collision2D hit) {
-        if(hit.gameObject.tag == "ResultArea") {
+        if(hit.gameObject.tag == "ResultArea" && enigma.isInProgress) {
             if(!isMooving && !isPlaced) {
                 int index = hit.gameObject.transform.GetSiblingIndex();
                 Vector3 newPosition = hit.gameObject.transform.position;
                 newPosition.z = -2;
                 transform.position = newPosition;
                 isPlaced = true;
-                enigma.UpdateFindCode(index,(int)type);
+                if(enigma.obtainingType == FormEnigma.ObtaningType.FORM) 
+                    enigma.UpdateFindCode(index,(int)type);
+                else if(enigma.obtainingType == FormEnigma.ObtaningType.OBJECT)
+                    enigma.UpdateFindCode(index,myObj.id);
             }
             else if(isMooving) 
                 collide = true;     
@@ -50,7 +58,7 @@ public class FormCollision : MonoBehaviour {
     }
 
     private void OnCollisionExit2D(Collision2D hit) {
-        if(hit.gameObject.tag == "ResultArea") {
+        if(hit.gameObject.tag == "ResultArea" && enigma.isInProgress) {
             if(collide)
                 collide = false;
             if(isPlaced)
