@@ -1,29 +1,478 @@
 {
 "dialogs": 
     [
+    //Début et CutScene1
         {
                 "Author": "System",
-                "Name": "StartTextAlpha",
+                "Name": "CutScene1",
                 "Content": [
                     "Once again, let’s do our job ",
-                    "ok I’ll start here "
+                    "Ok I’ll start here "
                 ],
                 "Texture": "tete_content",
-                "Tag": "Finish",
+                "Tag": "CutScene1",
                 "Answer": "TextAlpha"
 
         },
-
+        //Pénètre dans le salon
         {
             "Author": "System",
-            "Name": "TextAlpha",
+            "Name": "CutScene2",
             "Content": [
-                "Wsh frérot ",
-                "bien ou bien "
+                "At least, it's not going to be hard to find proofs ",
+                "Ok buddy, do what you are the best for "
             ],
             "Texture": "nomdelatexture",
-            "Tag": "Other"
+            "Tag": "CutScene2"
 
+        },
+        //Premiere fois en mode fantome
+        {
+            "Author": "System",
+            "Name": "FirstTime",
+            "Content": [
+                "Seems like some spirits are around here, let's talk to them ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FirstTime"
+        },
+        //Toutes les interactions en mode humain avec les indices Enigme 1
+        {
+            "Author": "System",
+            "Name": "Walls",
+            "Content": [
+                "No blood on the walls ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Walls"
+        },
+        {
+            "Author": "System",
+            "Name": "Ground",
+            "Content": [
+                "lot of blood.. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ground"
+        },
+        {
+            "Author": "System",
+            "Name": "Knife",
+            "Content": [
+                "One knife is missing ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Knife"
+        },
+        {
+            "Author": "System",
+            "Name": "Chandelur",
+            "Content": [
+                "That reminds me of something ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Chandelur"
+        },
+        {
+            "Author": "System",
+            "Name": "FastFood",
+            "Content": [
+                "Shitty fast food, it may not even have to be poisoned to kill them ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FastFood"
+        },
+        {
+            "Author": "System",
+            "Name": "Forks",
+            "Content": [
+                "those kinfes and forks are bloody ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Forks"
+        },
+        {
+            "Author": "System",
+            "Name": "Pan",
+            "Content": [
+                "Can we use this as a weapon ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Pan"
+        },
+        //Toutes les interactions en mode fantome avec les indices Enigme 1
+        {
+            "Author": "System",
+            "Name": "Ghost1_sentence1",
+            "Content": [
+                "Everything was fine, suddenly the lights turned off, and after... after? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ghost1_sentence1",
+            "Answer": "Ghost1_sentence2"
+        },
+        {
+            "Author": "System",
+            "Name": "Ghost1_sentence2",
+            "Content": [
+                "AFTER?? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ghost1_sentence2",
+            "Answer": "TextAlpha"
+        },
+        {
+            "Author": "System",
+            "Name": "Ghost2_sentence1",
+            "Content": [
+                "All I remember was fear and something cold on my neck ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ghost2_sentence1"
+        },
+        //Phase de déduction à l'aide des indices
+        {
+            "Author": "System",
+            "Name": "Enigma1_wrong",
+            "Content": [
+                "Focus! ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Enigma1_wrong"
+        },
+        {
+            "Author": "System",
+            "Name": "Enigma1_right",
+            "Content": [
+                "Ok so this asshole turned off the lights and then kills them all sneakly with a knife. ",
+                "He had planned his shot "
+                "Let's check upstairs now "
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Enigma1_right"
+        },
+        //interactions avec le reste de l'environnement pendant énigme1
+        {
+            "Author": "System",
+            "Name": "doorLocked_Downstairs",
+            "Content": [
+                "Of course it's locked damn it ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "doorLocked_Downstairs"
+        },
+        {
+            "Author": "System",
+            "Name": "tries_Upstairs",
+            "Content": [
+                "One at a time, let's start here ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "tries_Upstairs"
+        },
+        //Juste avant de monter les escaliers 
+        {
+            "Author": "System",
+            "Name": "FemaleGhost1_sentence1",
+            "Content": [
+                "Why? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FemaleGhost1_sentence1",
+            "Answer": "FemaleGhost1_sentence2"
+        },
+        {
+            "Author": "System",
+            "Name": "FemaleGhost1_sentence2",
+            "Content": [
+                "You were not alone.. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FemaleGhost1_sentence2",
+            "Answer": "First_Tear"
+        },
+        {
+            "Author": "System",
+            "Name": "First_Tear",
+            "Content": [
+                ".. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "First_Tear",
+        },
+        //A l'étage
+        {
+            "Author": "System",
+            "Name": "LockedDoors_Upstairs",
+            "Content": [
+                "Dammit ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "LockedDoors_Upstairs",
+        },
+        {
+            "Author": "System",
+            "Name": "Missing",
+            "Content": [
+                "Seriously? The handle is missing? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Missing",
+        },
+        {
+            "Author": "System",
+            "Name": "GhostInTheBed1",
+            "Content": [
+                "Did I die of epectasy? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "GhostInTheBed1",
+        },
+        {
+            "Author": "System",
+            "Name": "GhostInTheBed2",
+            "Content": [
+                "I'm totally sure I locked the doors.. How could he oppened them? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "GhostInTheBed2",
+            "Answer": "Keys"
+        },
+        {
+            "Author": "System",
+            "Name": "Keys",
+            "Content": [
+                "So our killer has acces to all the keys? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Keys",
+        },
+        {
+            "Author": "System",
+            "Name": "NightStand1",
+            "Content": [
+                "Feels too easy, I don't like it ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "NightStand1",
+        },
+        {
+            "Author": "System",
+            "Name": "Handle",
+            "Content": [
+                "So weird, why is it there? ",
+                "An unforseen mister criminal? "
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Handle",
+        },
+        //Réactions/Screamers si attrapez par les fantomes 
+        {
+            "Author": "System",
+            "Name": "PurchasingGhost1",
+            "Content": [
+                "Why? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "PurchasingGhost1",
+        },
+        {
+            "Author": "System",
+            "Name": "PurchasingGhost2",
+            "Content": [
+                "He didn't deserve it ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "PurchasingGhost2",
+        },
+        //Entrer dans salle de bain
+        {
+            "Author": "System",
+            "Name": "Classic",
+            "Content": [
+                "Classic ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Classic",
+        },
+        {
+            "Author": "System",
+            "Name": "FemaleGhost1_sentence3",
+            "Content": [
+                "It is deep down that you will understand ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FemaleGhost1_sentence3",
+            "Answer": "SecondTears"
+        },
+        {
+            "Author": "System",
+            "Name": "SecondTears",
+            "Content": [
+                "Why do I feel something weird? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "SecondTears",
+        },
+        //Une fois au sous-sol
+        {
+            "Author": "System",
+            "Name": "DeepDown",
+            "Content": [
+                "Deep down.. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "DeepDown",
+        },
+        {
+            "Author": "System",
+            "Name": "Electric_sentence1",
+            "Content": [
+                "It's a code, so that means only someone who knew it could have turned off the lights ",
+                "Someone who got access to all the keys and that knows the code.. it must be the resident ",
+                "this monster invited these people to kill them all.. "
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Electric_sentence1",
+        },
+        {
+            "Author": "System",
+            "Name": "Sherlock",
+            "Content": [
+                "Well done Sherlock ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Sherlock",
+        },
+        {
+            "Author": "System",
+            "Name": "Electric_sentence2",
+            "Content": [
+                "lights are back and the keys to the last room were just there, finally some good news.. ",
+                "I wanna know what kind of freak could do that ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Electric_sentence2",
+        },
+        //Dernière pièce
+        {
+            "Author": "System",
+            "Name": "OpenTheDoor",
+            "Content": [
+                ".. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "OpenTheDoor",
+        },
+        {
+            "Author": "System",
+            "Name": "Picture",
+            "Content": [
+                "No, no way, who did that? ",
+                "Is it a joke? ",
+                "It can't be ",
+                "I must be dreaming right? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Picture",
+            "Answer": "FemaleGhost1_sentence4"
+        },
+        {
+            "Author": "System",
+            "Name": "FemaleGhost1_sentence4",
+            "Content": [
+                "I will always love you ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FemaleGhost1_sentence4",
+            "Answer": "Memories"
+        },
+        {
+            "Author": "System",
+            "Name": "Memories",
+            "Content": [
+                "How did I know perfectly every room of this house? ",
+                "How could I recognize the keys? ",
+                "And the ghosts.. are they just memories of mine? "
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Memories",
+            "Answer": "beginPanic"
+        },
+        {
+            "Author": "System",
+            "Name": "beginPanic",
+            "Content": [
+                "I must go outside.. I must go out ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "beginPanic",
+        },
+        //Si attrapez pendant sa fuite par un fantome
+        {
+            "Author": "System",
+            "Name": "Ghost1_sentence3",
+            "Content": [
+                "You're just a monster ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ghost1_sentence3",
+        },
+        {
+            "Author": "System",
+            "Name": "Ghost2_sentence2",
+            "Content": [
+                "Why? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Ghost2_sentence2",
+        },
+        {
+            "Author": "System",
+            "Name": "GhostInTheBed1_sentence2",
+            "Content": [
+                "Why do you live when I'm dead.. ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "GhostInTheBed1_sentence2",
+        },
+        {
+            "Author": "System",
+            "Name": "GhostInTheBed2_sentence2",
+            "Content": [
+                "I was so happy ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "GhostInTheBed2_sentence2",
+        },
+        {
+            "Author": "System",
+            "Name": "FemaleGhost2",
+            "Content": [
+                "I'll never forgive you ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "FemaleGhost2",
+        },
+        //Une fois sortie
+        {
+            "Author": "System",
+            "Name": "Out",
+            "Content": [
+                "No, it can't be me, I'm a detective after all, not a murderer, right? ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Out",
+            "Answer": "lostAgain",
+        },
+        {
+            "Author": "System",
+            "Name": "Out",
+            "Content": [
+                "Once again let's do our job ",
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Out",
         }
     ]
 }	
