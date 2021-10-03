@@ -14,8 +14,7 @@ public abstract class Enigma : CoroutineSystem {
 
     public int actionEnd; // 0 = Ouverture Porte ; 1 = Changement Light
     public GameObject attachedObject;
-    public WorldController worldController;
-    
+
     void Update() {
 
         if(isInProgress && !lastIsInProgress) {

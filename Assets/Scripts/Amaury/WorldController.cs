@@ -7,7 +7,6 @@ public class WorldController : MonoBehaviour {
     public GameObject secondWorldParent;
     public bool isInFirstWorld;
     public GameObject ghostEffect;
-    public Sprite openDoor;
 
     private bool lastWorld;
 

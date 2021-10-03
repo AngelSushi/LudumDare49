@@ -38,7 +38,7 @@ public class FormEnigma : Enigma {
                     random = Random.Range(0,maxFormCount);
                 
             // secretCode[i] = random;
-            secretCode.Add(random,(FormType)random);
+                secretCode.Add(random,(FormType)random);
             }
 
             foreach(int i in secretCode.Keys) {
@@ -67,7 +67,7 @@ public class FormEnigma : Enigma {
 
         if(actionEnd == 0) {
             attachedObject.GetComponent<BoxCollider2D>().enabled = false;
-            attachedObject.GetComponent<SpriteRenderer>().sprite = worldController.openDoor;
+            attachedObject.GetComponent<SpriteRenderer>().sprite = attachedObject.GetComponent<Door>().openDoor;
         }
         else if(actionEnd == 1) 
             attachedObject.GetComponent<Light>().intensity = 1;
