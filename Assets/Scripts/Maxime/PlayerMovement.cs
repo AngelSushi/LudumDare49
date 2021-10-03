@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isInEnigma;
     public DialogController dialogController;
-
+    public UserInventory inventory;
 
     // Update is called once per frame
     void Update()

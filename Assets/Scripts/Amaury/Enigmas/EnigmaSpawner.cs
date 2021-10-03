@@ -7,7 +7,7 @@ public class EnigmaSpawner : MonoBehaviour {
     public Enigma enigma;
     public PlayerMovement player;
 
-    private bool collide;
+    public bool collide;
 
     void Update() {
 

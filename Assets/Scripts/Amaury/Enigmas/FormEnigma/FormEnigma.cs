@@ -5,28 +5,45 @@ using System.Linq;
 
 public class FormEnigma : Enigma {
     
+    public enum ObtaningType {
+        FORM,
+        OBJECT
+    }
+
+    public int enigmaID;
     public int maxFormCount;
     public int maxCodeSize;
     public float timeToWait;
-    public Dictionary<int,FormType> secretCode;
-    public List<FormCollision> formCollisions;
-    public int[] findCode = {-1,-1,-1};
+    public ObtaningType obtainingType;
+    public List<int> objectsId;
+    public List<int> codeId;
+
+    private Dictionary<int,FormType> secretCode;
+    private List<FormCollision> formCollisions;
+    public int[] findCode;
 
     void Start() {
-        secretCode = new Dictionary<int,FormType>();
+        findCode = new int[maxCodeSize];
 
-        for(int i = 0;i<maxCodeSize;i++) {
-            int random = -1;
+        for(int i = 0;i<maxCodeSize;i++)
+            findCode[i] = -1;
 
-            while(random == -1 || AlreadyInCode(random))
-                random = Random.Range(0,maxFormCount);
-            
-           // secretCode[i] = random;
-           secretCode.Add(random,(FormType)random);
-        }
+        if(obtainingType == ObtaningType.FORM) {
+            secretCode = new Dictionary<int,FormType>();
 
-        foreach(int i in secretCode.Keys) {
-            Debug.Log("index: " + i + " type: " + secretCode[i]);
+            for(int i = 0;i<maxCodeSize;i++) {
+                int random = -1;
+
+                while(random == -1 || AlreadyInCode(random))
+                    random = Random.Range(0,maxFormCount);
+                
+            // secretCode[i] = random;
+            secretCode.Add(random,(FormType)random);
+            }
+
+            foreach(int i in secretCode.Keys) {
+                Debug.Log("index: " + i + " type: " + secretCode[i]);
+            }
         }
     }
 
@@ -38,20 +55,42 @@ public class FormEnigma : Enigma {
         return false;
     }
 
+    public override void OnBeginEnigma() {
+        if(obtainingType == ObtaningType.OBJECT) 
+           ChangeSpriteState(true);    
+    }
+
+    public override void OnEndEnigma() {
+        isInProgress = false;
+        if(obtainingType == ObtaningType.OBJECT) 
+           ChangeSpriteState(true); 
+    }
+
+    private void ChangeSpriteState(bool state) {
+         foreach(GameObject obj in player.inventory.possededObjects) {
+            TakeObject myObject = obj.GetComponent<TakeObject>();
+            if(myObject.enigmaID == enigmaID && objectsId.Contains(myObject.id))
+                myObject.relatedSprite.SetActive(true);
+        }
+    }
+  
+
     public void UpdateFindCode(int index,int value) {
         findCode[index] = value;
+        Debug.Log("enter");
 
         if(HasComplete()) {
             RunDelayed(timeToWait,() => {
                 isFinish = IsFinish();
                 if(!isFinish) {
-                    foreach(int type in findCode) {
-                        GameObject targetForm = GetObjectByType(type);
-                        targetForm.transform.position = targetForm.GetComponent<FormCollision>().originalPos;
-                    }
-
-                    findCode = new int[3]{-1,-1,-1};
+                    for(int i = 0;i<transform.GetChild(1).childCount;i++) 
+                        transform.GetChild(1).GetChild(i).position = transform.GetChild(1).GetChild(i).gameObject.GetComponent<FormCollision>().originalPos;
+                    
+                    findCode = new int[maxCodeSize];
+                    for(int i = 0;i<maxCodeSize;i++)
+                        findCode[i] = -1;
                 }
+                
             });
         }
     }
@@ -65,20 +104,22 @@ public class FormEnigma : Enigma {
     }
 
     public bool IsFinish() {
-        for(int i = 0;i<findCode.Length;i++) {
-            if(findCode[i] != (int)secretCode.Values.ToArray()[i])
-                return false;
+        if(obtainingType == ObtaningType.FORM) {
+            for(int i = 0;i<findCode.Length;i++) {
+                if(findCode[i] != (int)secretCode.Values.ToArray()[i])
+                    return false;
+            }
+        }
+        else if(obtainingType == ObtaningType.OBJECT) {
+            Debug.Log("enter");
+            for(int i = 0;i<findCode.Length;i++) {
+                if(findCode[i] != codeId[i])
+                    return false;
+            }
         }
 
         return true;
     }
 
-    private GameObject GetObjectByType(int type) {
-        foreach(FormCollision c in formCollisions) {
-            if((int)c.type == type)
-                return c.gameObject;
-        }
-
-        return null;
-    }
+    
 }

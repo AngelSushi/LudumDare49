@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enigma : CoroutineSystem {
+public abstract class Enigma : CoroutineSystem {
     public bool isAvailable;
     public bool isFinish;
     public bool isInProgress;
@@ -15,11 +15,13 @@ public class Enigma : CoroutineSystem {
     void Update() {
 
         if(isInProgress && !lastIsInProgress) {
+            OnBeginEnigma();
             foreach(GameObject sprite in sprites) 
                 sprite.SetActive(true);
         }
 
         if(isFinish && !lastIsFinish) {
+            OnEndEnigma();
             player.isInEnigma = false;
             foreach(GameObject sprite in sprites)
                 sprite.SetActive(false);
@@ -28,5 +30,8 @@ public class Enigma : CoroutineSystem {
         lastIsInProgress = isInProgress;
         lastIsFinish = isFinish;
     }
+
+    public abstract void OnBeginEnigma();
+    public abstract void OnEndEnigma();
 
 }

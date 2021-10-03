@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogSpawner : MonoBehaviour {
-    public string dialogName;
+    private string dialogName;
     public DialogController dialogController;
 
     private bool collide;
@@ -21,8 +21,13 @@ public class DialogSpawner : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D hit) {
         Debug.Log("enter");
-        if(hit.gameObject.tag == "Player" && !dialogController.isInDialog) {
-            collide = true;
+        if(!dialogController.isInDialog) {
+            foreach(Dialog dialog in dialogController.dialogs.dialogs) {
+                if(hit.gameObject.tag == dialog.Tag) {
+                    collide = true;
+                    dialogName = dialog.Name;
+                }
+            }
         }
     }
 

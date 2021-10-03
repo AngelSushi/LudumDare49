@@ -40,7 +40,9 @@
 			"Content": [
 				"Bravo, tu sais désormais te déplacer. Voyons maintenant comment te déplacer plus vite. Tu peux sprinter avec A. ",
 				"Tu peux sprinter avec ta touche A. Rends toi au deux prochains cercles en sprintant. "
-			]
+			],
+			"Texture": "test",
+			"Tag": "Finish"
 		
 		},
 		

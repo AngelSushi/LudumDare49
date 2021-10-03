@@ -10,7 +10,8 @@ public class FormCollision : MonoBehaviour {
     public Vector3 originalPos;
     public FormType type;
     public FormEnigma enigma;
-
+    public TakeObject myObj;
+    
     void Start() {
         originalPos = transform.position;
     }
@@ -30,7 +31,7 @@ public class FormCollision : MonoBehaviour {
 
     void OnMouseDown() {
         if(enigma.isInProgress) 
-            isMooving = true;
+            isMooving = true;   
     }
 
     void OnMouseUp() {
@@ -46,7 +47,10 @@ public class FormCollision : MonoBehaviour {
                 newPosition.z = -2;
                 transform.position = newPosition;
                 isPlaced = true;
-                enigma.UpdateFindCode(index,(int)type);
+                if(enigma.obtainingType == FormEnigma.ObtaningType.FORM) 
+                    enigma.UpdateFindCode(index,(int)type);
+                else if(enigma.obtainingType == FormEnigma.ObtaningType.OBJECT)
+                    enigma.UpdateFindCode(index,myObj.id);
             }
             else if(isMooving) 
                 collide = true;     
