@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class WorldController : MonoBehaviour {
     
-    public GameObject firstWorldParent;
     public GameObject secondWorldParent;
     public bool isInFirstWorld;
+    public GameObject ghostEffect;
 
     private bool lastWorld;
 
     void Update() {
         
         if(isInFirstWorld && !lastWorld) {
-            firstWorldParent.SetActive(true);
             secondWorldParent.SetActive(false);
+            ghostEffect.SetActive(false);
         }
 
         if(!isInFirstWorld && lastWorld) {
-            firstWorldParent.SetActive(false);
             secondWorldParent.SetActive(true);
+            ghostEffect.SetActive(true);
         }
         
 
