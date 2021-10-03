@@ -1,6 +1,29 @@
 {
 "dialogs": 
     [
-        
+        {
+                "Author": "System",
+                "Name": "StartTextAlpha",
+                "Content": [
+                    "Once again, let’s do our job ",
+                    "ok I’ll start here "
+                ],
+                "Texture": "tete_content",
+                "Tag": "Finish",
+                "Answer": "TextAlpha"
+
+        },
+
+        {
+            "Author": "System",
+            "Name": "TextAlpha",
+            "Content": [
+                "Wsh frérot ",
+                "bien ou bien "
+            ],
+            "Texture": "nomdelatexture",
+            "Tag": "Other"
+
+        }
     ]
 }	

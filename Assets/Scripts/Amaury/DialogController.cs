@@ -11,9 +11,9 @@ public class Dialog {
     public string Author;
     public string Name;
     public string[] Content;
-    public bool isFinish;
     public string Texture;
     public string Tag;
+    public string Answer;
 }
 
 [System.Serializable]
@@ -62,8 +62,18 @@ public class DialogController : MonoBehaviour {
             StartCoroutine(ShowText(currentDialog.Content[index],currentDialog.Content.Length));
         }
 
-        if(finish) 
-            EndDialog();                   
+        if(finish) {
+            Debug.Log("dialogName: " + currentDialog.Name);
+            Debug.Log(currentDialog.Answer);
+            if(currentDialog.Answer != null) {
+                index = 0;
+                finish = false;
+                currentDialog = GetDialogByName(currentDialog.Answer);
+                StartCoroutine(ShowText(currentDialog.Content[0],currentDialog.Content.Length)); 
+            }
+            else 
+                EndDialog();
+        }                   
     }
 
     void AccelerateDialog(float accelerate) {
@@ -84,6 +94,8 @@ public class DialogController : MonoBehaviour {
         
         nextObj.gameObject.SetActive(true);
 
+        Debug.Log("length: " + length);
+        Debug.Log("index: " + index );
         if(length > 1 && index < length) {
             nextPage = true;
             index ++;
@@ -103,7 +115,6 @@ public class DialogController : MonoBehaviour {
         text.text = "";
         isInDialog = false;
         finish = false;
-        currentDialog.isFinish = true;
     }
 
     public Dialog GetDialogByName(string name) {

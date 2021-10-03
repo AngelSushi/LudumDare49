@@ -14,7 +14,6 @@ public class DialogSpawner : MonoBehaviour {
             Dialog dialog = dialogController.GetDialogByName(dialogName);
             dialogController.currentDialog = dialog;
             dialogController.isInDialog = true;
-            Debug.Log("dialog: " + dialog);
             StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length)); 
         }
     }
