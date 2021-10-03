@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FormCollision : MonoBehaviour {
 
@@ -12,16 +13,19 @@ public class FormCollision : MonoBehaviour {
     public FormEnigma enigma;
     public TakeObject myObj;
     
+    private Vector3 cursorPos;
+
     void Start() {
         originalPos = transform.position;
     }
 
     void Update() {
         if(enigma.isInProgress) {
-            if(isMooving) {
-                Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
-                transform.position = cameraPos;
-            }
+            Vector3 cursor = Mouse.current.position.ReadValue();
+            cursorPos = Camera.main.ScreenToWorldPoint(new Vector3(cursor.x,cursor.y,Camera.main.nearClipPlane));
+
+            if(isMooving) 
+                transform.position = cursorPos;
             else if(!collide) {
                 transform.position = originalPos;
                 collide = false;
@@ -29,14 +33,16 @@ public class FormCollision : MonoBehaviour {
         }
     }
 
-    void OnMouseDown() {
-        if(enigma.isInProgress) 
-            isMooving = true;   
-    }
+    public void OnClick(InputAction.CallbackContext e) {
+        if(e.started && enigma.isInProgress) {
+            if(transform.position.x - 0.5f < cursorPos.x && transform.position.x + 0.5f > cursorPos.x) {
+                if(transform.position.y - 0.5f < cursorPos.y && transform.position.y + 0.5f > cursorPos.y) 
+                    isMooving = true;           
+            }
+        }
 
-    void OnMouseUp() {
-        if(enigma.isInProgress) 
-            isMooving = false;
+        if(e.canceled && enigma.isInProgress) 
+            isMooving = false;    
     }
 
     private void OnCollisionStay2D(Collision2D hit) {

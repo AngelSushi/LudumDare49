@@ -21,6 +21,7 @@ public class FormEnigma : Enigma {
     private Dictionary<int,FormType> secretCode;
     private List<FormCollision> formCollisions;
     public int[] findCode;
+    public bool isMovingObj;
 
     void Start() {
         findCode = new int[maxCodeSize];
@@ -64,6 +65,14 @@ public class FormEnigma : Enigma {
         isInProgress = false;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true); 
+
+        if(actionEnd == 0) {
+            attachedObject.GetComponent<BoxCollider2D>().enabled = false;
+            attachedObject.GetComponent<SpriteRenderer>().sprite = worldController.openDoor;
+        }
+        else if(actionEnd == 1) 
+            attachedObject.GetComponent<Light>().intensity = 1;
+        
     }
 
     private void ChangeSpriteState(bool state) {
