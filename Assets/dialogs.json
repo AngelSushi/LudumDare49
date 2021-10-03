@@ -1,6 +1,7 @@
 {
 "dialogs": 
     [
+    //Début et CutScene1
         {
                 "Author": "System",
                 "Name": "CutScene1",
@@ -9,8 +10,10 @@
                     "Ok I’ll start here "
                 ],
                 "Texture": "neutre",
-                "Tag": "CutScene1"
+                "Tag": "CutScene1",
+
         },
+        //Pénètre dans le salon
         {
             "Author": "System",
             "Name": "Vide",
@@ -32,6 +35,7 @@
             "Tag": "CutScene2"
 
         },
+        //Premiere fois en mode fantome
         {
             "Author": "System",
             "Name": "FirstTime",
@@ -41,6 +45,7 @@
             "Texture": "pensif",
             "Tag": "FirstTime"
         },
+        //Toutes les interactions en mode humain avec les indices Enigme 1
         {
             "Author": "System",
             "Name": "Walls",
@@ -104,6 +109,7 @@
             "Texture": "pensif",
             "Tag": "Pan"
         },
+        //Toutes les interactions en mode fantome avec les indices Enigme 1
         {
             "Author": "System",
             "Name": "Ghost1_sentence1",
@@ -121,7 +127,7 @@
                 "AFTER?? "
             ],
             "Texture": "ghost_m1_2",
-            "Tag": "Ghost1_sentence2"
+            "Tag": "Ghost1_sentence2",
         },
         {
             "Author": "System",
@@ -132,6 +138,7 @@
             "Texture": "ghost_m4_1",
             "Tag": "Ghost2_sentence1"
         },
+        //Phase de déduction à l'aide des indices
         {
             "Author": "System",
             "Name": "Enigma1_wrong",
@@ -152,6 +159,7 @@
             "Texture": "saoulé",
             "Tag": "Enigma1_right"
         },
+        //interactions avec le reste de l'environnement pendant énigme1
         {
             "Author": "System",
             "Name": "doorLocked_Downstairs",
@@ -170,6 +178,7 @@
             "Texture": "pensif",
             "Tag": "tries_Upstairs"
         },
+        //Juste avant de monter les escaliers 
         {
             "Author": "System",
             "Name": "FemaleGhost1_sentence1",
@@ -197,8 +206,9 @@
                 ".. "
             ],
             "Texture": "pleure",
-            "Tag": "First_Tear"
+            "Tag": "First_Tear",
         },
+        //A l'étage
         {
             "Author": "System",
             "Name": "LockedDoors_Upstairs",
@@ -206,7 +216,7 @@
                 "Dammit "
             ],
             "Texture": "saoulé_énervé",
-            "Tag": "LockedDoors_Upstairs"
+            "Tag": "LockedDoors_Upstairs",
         },
         {
             "Author": "System",
@@ -215,7 +225,7 @@
                 "Seriously? The handle is missing? "
             ],
             "Texture": "incompréhension",
-            "Tag": "Missing"
+            "Tag": "Missing",
         },
         {
             "Author": "System",
@@ -224,7 +234,7 @@
                 "Did I die of epectasy? "
             ],
             "Texture": "ghost_m2_1",
-            "Tag": "GhostInTheBed1"
+            "Tag": "GhostInTheBed1",
         },
         {
             "Author": "System",
@@ -244,7 +254,7 @@
                 "that doesn't sounds good"
             ],
             "Texture": "paniqué",
-            "Tag": "Keys"
+            "Tag": "Keys",
         },
         {
             "Author": "System",
@@ -253,7 +263,7 @@
                 "Feels too easy, I don't like it "
             ],
             "Texture": "stressé",
-            "Tag": "NightStand" 
+            "Tag": "NightStand",
         },
         {
             "Author": "System",
@@ -263,8 +273,9 @@
                 "An unforseen Mister criminal? "
             ],
             "Texture": "incompréhension",
-            "Tag": "Handle"
+            "Tag": "Handle",
         },
+        //Réactions/Screamers si attrapez par les fantomes 
         {
             "Author": "System",
             "Name": "PurchasingGhost1",
@@ -272,7 +283,7 @@
                 "Why? "
             ],
             "Texture": "ghost_m2_2",
-            "Tag": "PurchasingGhost1"
+            "Tag": "PurchasingGhost1",
         },
         {
             "Author": "System",
@@ -281,8 +292,9 @@
                 "He didn't deserve it "
             ],
             "Texture": "ghost_m3_2",
-            "Tag": "PurchasingGhost2"
+            "Tag": "PurchasingGhost2",
         },
+        //Entrer dans salle de bain
         {
             "Author": "System",
             "Name": "Classic",
@@ -290,7 +302,7 @@
                 "Classic "
             ],
             "Texture": "inquiet_subtil",
-            "Tag": "Classic"
+            "Tag": "Classic",
         },
         {
             "Author": "System",
@@ -309,8 +321,9 @@
                 "Why do I feel something weird? "
             ],
             "Texture": "pleure",
-            "Tag": "SecondTears"
+            "Tag": "SecondTears",
         },
+        //Une fois au sous-sol
         {
             "Author": "System",
             "Name": "DeepDown",
@@ -318,7 +331,7 @@
                 "Deep down.. "
             ],
             "Texture": "inquiet_subtil",
-            "Tag": "DeepDown"
+            "Tag": "DeepDown",
         },
         {
             "Author": "System",
@@ -329,7 +342,7 @@
                 "this monster invited these people to kill them all.. "
             ],
             "Texture": "saoulé_énervé",
-            "Tag": "Electric_sentence1"
+            "Tag": "Electric_sentence1",
         },
         {
             "Author": "System",
@@ -338,7 +351,7 @@
                 "Well done Sherlock "
             ],
             "Texture": "pensif",
-            "Tag": "Sherlock"
+            "Tag": "Sherlock",
         },
         {
             "Author": "System",
@@ -349,8 +362,9 @@
                 "I wanna know what kind of freak could do that "
             ],
             "Texture": "saoulé",
-            "Tag": "Electric_sentence2"
+            "Tag": "Electric_sentence2",
         },
+        //Dernière pièce
         {
             "Author": "System",
             "Name": "OpenTheDoor",
@@ -358,7 +372,7 @@
                 ".. "
             ],
             "Texture": "vide",
-            "Tag": "OpenTheDoor"
+            "Tag": "OpenTheDoor",
         },
         {
             "Author": "System",
@@ -402,8 +416,9 @@
                 "I must go outside.. I must go out "
             ],
             "Texture": "choqué_de_la_life",
-            "Tag": "beginPanic"
+            "Tag": "beginPanic",
         },
+        //Si attrapez pendant sa fuite par un fantome
         {
             "Author": "System",
             "Name": "Ghost1_sentence3",
@@ -411,7 +426,7 @@
                 "You're just a monster "
             ],
             "Texture": "ghost_m3_2",
-            "Tag": "Ghost1_sentence3"
+            "Tag": "Ghost1_sentence3",
         },
         {
             "Author": "System",
@@ -420,7 +435,7 @@
                 "Why? "
             ],
             "Texture": "ghost_m2_2",
-            "Tag": "Ghost2_sentence2"
+            "Tag": "Ghost2_sentence2",
         },
         {
             "Author": "System",
@@ -429,7 +444,7 @@
                 "Why do you live when I'm dead.. "
             ],
             "Texture": "ghost_m1_2",
-            "Tag": "GhostInTheBed1_sentence2"
+            "Tag": "GhostInTheBed1_sentence2",
         },
         {
             "Author": "System",
@@ -438,7 +453,7 @@
                 "I was so happy "
             ],
             "Texture": "ghost_f1_1",
-            "Tag": "GhostInTheBed2_sentence2"
+            "Tag": "GhostInTheBed2_sentence2",
         },
         {
             "Author": "System",
@@ -447,8 +462,9 @@
                 "I'll never forgive you "
             ],
             "Texture": "ghost_m4_2",
-            "Tag": "FemaleGhost2"
+            "Tag": "FemaleGhost2",
         },
+        //Une fois sortie
         {
             "Author": "System",
             "Name": "Out",
@@ -457,7 +473,7 @@
             ],
             "Texture": "paniqué",
             "Tag": "Out",
-            "Answer": "lostAgain"
+            "Answer": "lostAgain",
         },
         {
             "Author": "System",
@@ -466,7 +482,7 @@
                 "Once again let's do our job "
             ],
             "Texture": "neutre",
-            "Tag": "Out"
+            "Tag": "Out",
         }
     ]
 }	

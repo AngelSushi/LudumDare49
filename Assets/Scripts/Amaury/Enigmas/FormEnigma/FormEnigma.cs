@@ -21,6 +21,7 @@ public class FormEnigma : Enigma {
     private Dictionary<int,FormType> secretCode;
     private List<FormCollision> formCollisions;
     public int[] findCode;
+    public bool isMovingObj;
 
     void Start() {
         findCode = new int[maxCodeSize];
