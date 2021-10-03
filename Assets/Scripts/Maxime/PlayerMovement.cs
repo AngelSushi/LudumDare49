@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    public Animator animator;
+    //public Animator animator;
 
 
 
