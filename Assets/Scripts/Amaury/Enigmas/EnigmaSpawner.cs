@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnigmaSpawner : MonoBehaviour {
     
@@ -8,14 +9,6 @@ public class EnigmaSpawner : MonoBehaviour {
     public PlayerMovement player;
 
     public bool collide;
-
-    void Update() {
-
-        if(collide && Input.GetKeyDown(KeyCode.E)) {
-            enigma.isInProgress = true;
-            player.isInEnigma = true;
-        }
-    }
 
     private void OnTriggerStay2D(Collider2D hit) {
         if(hit.gameObject.tag == "Player" && !enigma.isFinish && enigma.isAvailable && !enigma.isInProgress) 
@@ -26,6 +19,14 @@ public class EnigmaSpawner : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D other) {
         if(collide)
             collide = false;
+    }
+
+    public void OnInteract(InputAction.CallbackContext e) {
+        if(e.started && collide) {
+            enigma.isInProgress = true;
+            player.isInEnigma = true;
+            collide = false;
+        }
     }
 }
 

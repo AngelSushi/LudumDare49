@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogSpawner : MonoBehaviour {
     private string dialogName;
@@ -8,18 +9,7 @@ public class DialogSpawner : MonoBehaviour {
 
     private bool collide;
 
-    void Update() {
-        if(collide && Input.GetKeyDown(KeyCode.E)) {
-            collide = false;
-            Dialog dialog = dialogController.GetDialogByName(dialogName);
-            dialogController.currentDialog = dialog;
-            dialogController.isInDialog = true;
-            StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length)); 
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D hit) {
-        Debug.Log("enter");
         if(!dialogController.isInDialog) {
             foreach(Dialog dialog in dialogController.dialogs.dialogs) {
                 if(hit.gameObject.tag == dialog.Tag) {
@@ -33,5 +23,17 @@ public class DialogSpawner : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D other) {
         if(collide)
             collide = false;
+    }
+
+    public void OnInteract(InputAction.CallbackContext e) {
+        if(e.started) {
+            if(collide) {
+                collide = false;
+                Dialog dialog = dialogController.GetDialogByName(dialogName);
+                dialogController.currentDialog = dialog;
+                dialogController.isInDialog = true;
+                StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length));
+            }
+        }
     }
 }
