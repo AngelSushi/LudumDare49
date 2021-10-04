@@ -617,7 +617,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &33386258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -930,7 +930,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &62068406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7405,7 +7405,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &251474404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7652,7 +7652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010376, y: -88.56059}
+  m_AnchoredPosition: {x: 102, y: -120}
   m_SizeDelta: {x: 1920, y: 131.7312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &282853204
@@ -7685,10 +7685,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -8281,7 +8281,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &337550725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9079,7 +9079,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!1 &512824735
 GameObject:
   m_ObjectHideFlags: 0
@@ -17658,7 +17658,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &663461668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18063,8 +18063,6 @@ GameObject:
   - component: {fileID: 704034525}
   - component: {fileID: 704034524}
   - component: {fileID: 704034528}
-  - component: {fileID: 704034533}
-  - component: {fileID: 704034532}
   - component: {fileID: 704034534}
   m_Layer: 0
   m_Name: Player
@@ -18246,7 +18244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704034523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.29, y: 0.63, z: 0.55126953}
+  m_LocalPosition: {x: -0.47, y: -0.64, z: 0.55126953}
   m_LocalScale: {x: 1.3724494, y: 1.3724494, z: 1.3724494}
   m_Children:
   - {fileID: 622995280}
@@ -18257,44 +18255,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &704034532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704034523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e6025c133ac364ca4a5fb7cbb09fe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 704034523}
-  TeleportTo: {fileID: 2012821706}
-  StartTeleporter: {fileID: 1098643974}
-  fadeSystem: {fileID: 1860267994}
-  movePlayer: {fileID: 704034527}
-  Audio_Tp: {fileID: 0}
-  audioTp: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
---- !u!114 &704034533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704034523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e6025c133ac364ca4a5fb7cbb09fe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 704034523}
-  TeleportTo: {fileID: 1256106963}
-  StartTeleporter: {fileID: 759603567}
-  fadeSystem: {fileID: 1860267994}
-  movePlayer: {fileID: 704034527}
-  Audio_Tp: {fileID: 0}
-  audioTp: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!82 &704034534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21224,7 +21184,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &766944035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21481,7 +21441,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 1
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &820009798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22330,6 +22290,7 @@ GameObject:
   - component: {fileID: 954836998}
   - component: {fileID: 954837000}
   - component: {fileID: 954836999}
+  - component: {fileID: 954837001}
   m_Layer: 0
   m_Name: DescendreSalon
   m_TagString: Teleporter
@@ -22430,6 +22391,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &954837001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954836997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4c57e29ac10748bb527895bd29622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 704034523}
+  balise1: {fileID: 759603567}
 --- !u!1 &959025882
 GameObject:
   m_ObjectHideFlags: 0
@@ -24398,6 +24373,7 @@ GameObject:
   - component: {fileID: 1262948400}
   - component: {fileID: 1262948402}
   - component: {fileID: 1262948401}
+  - component: {fileID: 1262948403}
   m_Layer: 0
   m_Name: salleEnHaut
   m_TagString: SecondTeleporter
@@ -24498,6 +24474,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1262948403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262948399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4c57e29ac10748bb527895bd29622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 704034523}
+  balise1: {fileID: 1098643974}
 --- !u!1 &1267305662
 GameObject:
   m_ObjectHideFlags: 0
@@ -25327,7 +25317,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &1374545619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25341,7 +25331,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5742583, y: 0}
+  m_Offset: {x: 0.4295311, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25352,7 +25342,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16140062, y: 1}
+  m_Size: {x: 0.11616802, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1376067032
 GameObject:
@@ -26897,7 +26887,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!212 &1549146730
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30239,7 +30229,7 @@ MonoBehaviour:
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
   collide: 0
-  audioDoor: {fileID: 0}
+  audioDoor: {fileID: 8300000, guid: 52fdf0f7bbb2f044b87bef9e0d20da07, type: 3}
 --- !u!61 &1803021559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30316,14 +30306,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 00324c60f2030ef41a018d35c4bf52e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30764,12 +30754,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecc69ecea5e7a04fad103fef5781763, type: 3}
---- !u!95 &1860267994 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6834124111188241609, guid: eecc69ecea5e7a04fad103fef5781763,
-    type: 3}
-  m_PrefabInstance: {fileID: 1860267993}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1860267995 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6834124111188241608, guid: eecc69ecea5e7a04fad103fef5781763,
@@ -32583,6 +32567,7 @@ GameObject:
   - component: {fileID: 2051487368}
   - component: {fileID: 2051487370}
   - component: {fileID: 2051487369}
+  - component: {fileID: 2051487371}
   m_Layer: 0
   m_Name: MonterChambre
   m_TagString: SecondTeleporter
@@ -32683,6 +32668,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2051487371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051487367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4c57e29ac10748bb527895bd29622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 704034523}
+  balise1: {fileID: 1256106963}
 --- !u!1 &2059129069
 GameObject:
   m_ObjectHideFlags: 0
@@ -33178,6 +33177,7 @@ GameObject:
   - component: {fileID: 2131043864}
   - component: {fileID: 2131043866}
   - component: {fileID: 2131043865}
+  - component: {fileID: 2131043867}
   m_Layer: 0
   m_Name: SousSols
   m_TagString: Teleporter
@@ -33193,7 +33193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131043863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.76, y: 2.24, z: 0}
+  m_LocalPosition: {x: 29.692, y: 1.412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 70037722}
@@ -33278,6 +33278,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2131043867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131043863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e4c57e29ac10748bb527895bd29622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 704034523}
+  balise1: {fileID: 2012821706}
 --- !u!1 &2132128837
 GameObject:
   m_ObjectHideFlags: 0
