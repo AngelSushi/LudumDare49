@@ -219,6 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 58179748}
+  - component: {fileID: 58179749}
   m_Layer: 0
   m_Name: Environement
   m_TagString: Untagged
@@ -245,6 +246,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &58179749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58179747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4ef1951da4cd34a92e32f2fc7d2d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  accelerate: 0
+  isInDialog: 0
+  text: {fileID: 0}
+  nextObj: {fileID: 0}
+  head: {fileID: 0}
+  dialogObj: {fileID: 0}
+  dialogs:
+    dialogs: []
+  finish: 0
+  currentDialog:
+    Author: 
+    Name: 
+    Content: []
+    Texture: 
+    Tag: 
+    Answer: 
+    NeedInteraction: 0
+    isFinish: 0
+  dialogsFile: {fileID: 0}
 --- !u!1 &120093696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,9 +1460,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1886943738}
-  spriteRenderer: {fileID: 1886943739}
+  animator: {fileID: 1886943742}
   isInEnigma: 0
-  dialogController: {fileID: 0}
+  dialogController: {fileID: 58179749}
   inventory: {fileID: 0}
 --- !u!95 &1886943742
 Animator:
