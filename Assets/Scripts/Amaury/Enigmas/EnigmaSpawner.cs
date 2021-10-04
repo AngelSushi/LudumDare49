@@ -28,5 +28,12 @@ public class EnigmaSpawner : MonoBehaviour {
             collide = false;
         }
     }
+
+    public void OnMind(InputAction.CallbackContext e) {
+        if(e.started && !enigma.isFinish && enigma.isAvailable && !enigma.isInProgress) {
+            enigma.isInProgress = true;
+            player.isInEnigma = true;
+        }
+    }
 }
 

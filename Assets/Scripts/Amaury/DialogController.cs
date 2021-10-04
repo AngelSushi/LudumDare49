@@ -15,6 +15,8 @@ public class Dialog {
     public string Texture;
     public string Tag;
     public string Answer;
+    public bool NeedInteraction;
+    public bool isFinish;
 }
 
 [System.Serializable]
@@ -111,6 +113,7 @@ public class DialogController : MonoBehaviour {
         text.text = "";
         isInDialog = false;
         finish = false;
+        currentDialog.isFinish = true;
     }
 
     public Dialog GetDialogByName(string name) {

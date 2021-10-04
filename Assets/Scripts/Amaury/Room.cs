@@ -7,10 +7,10 @@ public class Room : MonoBehaviour {
     private bool collide;
 
     void Update() {
-        transform.gameObject.GetComponent<SpriteRenderer>().enabled = collide;
+        transform.gameObject.GetComponent<SpriteRenderer>().enabled = !collide;
 
         for(int i = 0;i<transform.childCount;i++) 
-            transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().enabled = collide;
+            transform.GetChild(i).gameObject.GetComponent<SpriteRenderer>().enabled = !collide;
     }
 
     private void OnTriggerStay2D(Collider2D hit) {

@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 movement;
-    public SpriteRenderer spriteRenderer;
-    //public Animator animator;
+
+    public Animator animator;
 
     public bool isInEnigma;
     public DialogController dialogController;
@@ -21,9 +21,39 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float charaterVelocity = Mathf.Abs(rb.velocity.x);
-        Flip(movement.x);
 
-        //animator.SetFloat("Speed", charaterVelocity);
+        animator.SetBool("moove",movement != Vector2.zero);
+        animator.SetFloat("horizontal",movement.x);
+        animator.SetFloat("vertical",movement.y); 
+
+        float horizontal = animator.GetFloat("horizontal");
+        float vertical = animator.GetFloat("vertical");
+
+        if(horizontal > 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if(horizontal < 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        if(vertical > 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(3).gameObject.SetActive(true);
+        }
+        else if(vertical < 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
@@ -31,28 +61,10 @@ public class PlayerMovement : MonoBehaviour
         if(!isInEnigma && !dialogController.isInDialog)
             rb.velocity = movement * moveSpeed;
     }
-    void Flip(float charaterVelocity)
-    {
-        if (charaterVelocity > 0.1f)
-        {
 
-            spriteRenderer.flipX = false;
-            
-
-            Debug.Log("TOURNE");
-
-        }
-        else if (charaterVelocity < -0.1f)
-        {
-
-            spriteRenderer.flipX = true;
-        }
-
-    }
 
 
     public void OnMove(InputAction.CallbackContext e) {
-        Debug.Log("enter");
         movement = e.ReadValue<Vector2>().normalized;
     }
 }

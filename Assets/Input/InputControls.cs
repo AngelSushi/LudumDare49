@@ -41,6 +41,22 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ghost"",
+                    ""type"": ""Button"",
+                    ""id"": ""37fe4108-5c8c-48cb-a663-89df19c7cc1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Mind"",
+                    ""type"": ""Button"",
+                    ""id"": ""51c272bb-4923-480f-b943-e2cfc0a52e9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -51,17 +67,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""keyboard & mouse"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""398920e1-2ded-4470-bb68-3aa26cbe8347"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -122,61 +127,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Move"",
-                    ""id"": ""1415879e-e746-489f-8eeb-be057bdd43a8"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""5202dac6-69c7-4710-bc34-5a5b37c88ae0"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""a6c90697-ab8a-44c8-82a1-5e9d58936294"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9bff32d2-f171-4ce2-ad6a-c84f43174473"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""acc70d22-c285-4d6f-816d-d4374bf62749"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""e5016d88-3fac-4ebd-a0b6-ec7caf5663aa"",
                     ""path"": ""<Mouse>/leftButton"",
@@ -184,6 +134,28 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""keyboard & mouse"",
                     ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff5e0c67-42c4-4102-8bbb-319bbfdad114"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ghost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f620259e-f06c-4c16-b691-7f7c2de4a07f"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mind"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -225,6 +197,8 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
+        m_Player_Ghost = m_Player.FindAction("Ghost", throwIfNotFound: true);
+        m_Player_Mind = m_Player.FindAction("Mind", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -277,6 +251,8 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Click;
+    private readonly InputAction m_Player_Ghost;
+    private readonly InputAction m_Player_Mind;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -284,6 +260,8 @@ public class @InputControls : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Click => m_Wrapper.m_Player_Click;
+        public InputAction @Ghost => m_Wrapper.m_Player_Ghost;
+        public InputAction @Mind => m_Wrapper.m_Player_Mind;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +280,12 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Click.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
+                @Ghost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Ghost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Ghost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Mind.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
+                @Mind.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
+                @Mind.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -315,6 +299,12 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @Ghost.started += instance.OnGhost;
+                @Ghost.performed += instance.OnGhost;
+                @Ghost.canceled += instance.OnGhost;
+                @Mind.started += instance.OnMind;
+                @Mind.performed += instance.OnMind;
+                @Mind.canceled += instance.OnMind;
             }
         }
     }
@@ -342,5 +332,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
+        void OnGhost(InputAction.CallbackContext context);
+        void OnMind(InputAction.CallbackContext context);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class FormEnigma : Enigma {
     
@@ -22,6 +23,8 @@ public class FormEnigma : Enigma {
     private List<FormCollision> formCollisions;
     public int[] findCode;
     public bool isMovingObj;
+
+    private Vector2 moveCursor;
 
     void Start() {
         findCode = new int[maxCodeSize];
@@ -57,11 +60,13 @@ public class FormEnigma : Enigma {
     }
 
     public override void OnBeginEnigma() {
+        Cursor.visible = true;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true);    
     }
 
     public override void OnEndEnigma() {
+        Cursor.visible = false;
         isInProgress = false;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true); 
@@ -86,7 +91,6 @@ public class FormEnigma : Enigma {
 
     public void UpdateFindCode(int index,int value) {
         findCode[index] = value;
-        Debug.Log("enter");
 
         if(HasComplete()) {
             RunDelayed(timeToWait,() => {
@@ -120,7 +124,6 @@ public class FormEnigma : Enigma {
             }
         }
         else if(obtainingType == ObtaningType.OBJECT) {
-            Debug.Log("enter");
             for(int i = 0;i<findCode.Length;i++) {
                 if(findCode[i] != codeId[i])
                     return false;
@@ -128,6 +131,16 @@ public class FormEnigma : Enigma {
         }
 
         return true;
+    }
+
+    public void OnMoveCursor(InputAction.CallbackContext e) {
+        if((e.started || e.performed) && isInProgress && !isFinish && isAvailable) {
+            moveCursor = e.ReadValue<Vector2>();
+            Cursor.visible = false;
+            cursor.SetActive(true);
+            Vector2 pos = new Vector2(transform.position.x,transform.position.y);
+            cursor.transform.Translate(moveCursor * 25 * Time.deltaTime);
+        }
     }
 
     
