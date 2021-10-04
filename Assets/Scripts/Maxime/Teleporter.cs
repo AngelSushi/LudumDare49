@@ -24,10 +24,6 @@ public class Teleporter : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-   
-
-     
-
         if (collision.gameObject.CompareTag("Teleporter"))
         {
             StartCoroutine(TimeToTeleport());
@@ -64,7 +60,7 @@ public class Teleporter : MonoBehaviour
     public IEnumerator TimeToTeleport()
     {
 
-        Audio_Tp.PlayOneShot(audioTp);
+     //   Audio_Tp.PlayOneShot(audioTp);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         
