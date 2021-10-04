@@ -8,12 +8,20 @@ public class Door : MonoBehaviour {
     public bool openByEnigma;
 
     private bool collide;
+    private AudioSource Audio_Door;
 
+    [SerializeField] private AudioClip audioDoor = null;
+
+    private void Awake()
+    {
+        Audio_Door = GetComponent<AudioSource>();
+    }
     void Update() {
         if(transform.gameObject.GetComponent<SpriteRenderer>().sprite == openDoor && transform.childCount > 0) {
             Debug.Log("test");
             transform.GetChild(0).gameObject.SetActive(false);
             transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Audio_Door.PlayOneShot(audioDoor);
         }
     }
 
@@ -31,6 +39,7 @@ public class Door : MonoBehaviour {
         if(e.started && !openByEnigma && collide) {
             transform.gameObject.GetComponent<SpriteRenderer>().sprite = openDoor;
             collide = false;
+           
         }
     }
 }
