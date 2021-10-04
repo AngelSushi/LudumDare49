@@ -47,6 +47,9 @@ TagManager:
   - Out
   - Teleporter
   - SecondTeleporter
+  - PlayerSpawn
+  - GhostInTheBed1_sentence3
+  - GhostInTheBed2_sentence3
   layers:
   - Default
   - TransparentFX
