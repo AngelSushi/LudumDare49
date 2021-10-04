@@ -26,6 +26,9 @@ public class FormEnigma : Enigma {
 
     private Vector2 moveCursor;
 
+    public GameObject[] numbersObj = new GameObject[3];
+    public Sprite[] numbers = new Sprite[6];
+
     void Start() {
         findCode = new int[maxCodeSize];
 
@@ -45,8 +48,11 @@ public class FormEnigma : Enigma {
                 secretCode.Add(random,(FormType)random);
             }
 
+            int count = 0;
             foreach(int i in secretCode.Keys) {
-                Debug.Log("index: " + i + " type: " + secretCode[i]);
+                Debug.Log("i:" + i + " type: " + secretCode[i]);
+                numbersObj[count].GetComponent<SpriteRenderer>().sprite = numbers[i];
+                count++;
             }
         }
     }
@@ -60,6 +66,7 @@ public class FormEnigma : Enigma {
     }
 
     public override void OnBeginEnigma() {
+        player.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Cursor.visible = true;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true);    
@@ -67,6 +74,7 @@ public class FormEnigma : Enigma {
 
     public override void OnEndEnigma() {
         Cursor.visible = false;
+        player.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         isInProgress = false;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true); 
