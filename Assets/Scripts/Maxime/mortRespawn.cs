@@ -26,9 +26,6 @@ public class mortRespawn : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Audio_SCREAM.PlayOneShot(audioSCREAM);
-            
-          
-            StartCoroutine(TimeToDie(col));
            
             Enemy.SetBool("DieEnemy",true);
 
@@ -40,13 +37,6 @@ public class mortRespawn : MonoBehaviour
     }
    
   
-
-    public IEnumerator TimeToDie(Collider2D col)
-    {
-        yield return new WaitForSeconds(1f);
-        col.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
-        
-    }
 
 
 

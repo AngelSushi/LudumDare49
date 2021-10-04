@@ -68,7 +68,6 @@ public class FormEnigma : Enigma {
         player.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         Cursor.visible = true;
 
-        Debug.Log("uuuuuber");
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true);    
     }
@@ -90,8 +89,10 @@ public class FormEnigma : Enigma {
     }
 
     private void ChangeSpriteState(bool state) {
+        Debug.Log("change: " + player.inventory.possededObjects.Count());
          foreach(GameObject obj in player.inventory.possededObjects) {
             TakeObject myObject = obj.GetComponent<TakeObject>();
+            Debug.Log("id: " + myObject.id);
             Debug.Log("result: " + (objectsId.Contains(myObject.id)));
             if(myObject.enigmaID == enigmaID && objectsId.Contains(myObject.id))
                 myObject.relatedSprite.SetActive(true);

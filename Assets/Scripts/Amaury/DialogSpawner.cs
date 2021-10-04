@@ -8,11 +8,13 @@ public class DialogSpawner : MonoBehaviour {
     public DialogController dialogController;
 
     private bool collide;
+    public List<string> dialogsName = new List<string>();
 
     private void OnTriggerStay2D(Collider2D hit) {
         if(!dialogController.isInDialog) {
             foreach(Dialog listDialog in dialogController.dialogs.dialogs) {
-                if(!listDialog.isFinish && hit.gameObject.tag == listDialog.Tag) {
+                if(hit.gameObject.tag == listDialog.Tag && !listDialog.isFinish && !dialogsName.Contains(listDialog.Name)) {
+                    Debug.Log("enterDialog");
                     if(listDialog.NeedInteraction) {
                         collide = true;
                         dialogName = listDialog.Name;
@@ -22,6 +24,7 @@ public class DialogSpawner : MonoBehaviour {
                         Dialog dialog = dialogController.GetDialogByName(listDialog.Name);
                         dialogController.currentDialog = dialog;
                         dialogController.isInDialog = true;
+                        if(!dialogsName.Contains(listDialog.Name)) dialogsName.Add(listDialog.Name);
                         StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length));                }
                     
                 }
@@ -41,6 +44,7 @@ public class DialogSpawner : MonoBehaviour {
                 Dialog dialog = dialogController.GetDialogByName(dialogName);
                 dialogController.currentDialog = dialog;
                 dialogController.isInDialog = true;
+                if(!dialogsName.Contains(dialogName))dialogsName.Add(dialogName);
                 StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length));
             }
         }

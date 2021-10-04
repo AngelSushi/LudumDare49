@@ -7,7 +7,7 @@ public class Door : MonoBehaviour {
     public Sprite openDoor;
     public bool openByEnigma;
 
-    private bool collide;
+    public bool collide;
     private AudioSource Audio_Door;
 
     [SerializeField] private AudioClip audioDoor = null;
@@ -18,7 +18,6 @@ public class Door : MonoBehaviour {
     }
     void Update() {
         if(transform.gameObject.GetComponent<SpriteRenderer>().sprite == openDoor && transform.childCount > 0) {
-            Debug.Log("test");
             transform.GetChild(0).gameObject.SetActive(false);
             transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
            
@@ -33,7 +32,7 @@ public class Door : MonoBehaviour {
         
     }
 
-    private void OnTriggerExit2D(Collider2D hit) {
+    private void OnCollisionExit2D(Collision2D hit) {
         if(collide)
             collide = false;
     }

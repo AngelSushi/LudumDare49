@@ -26,7 +26,6 @@ public abstract class Enigma : CoroutineSystem {
 
         if(isInProgress && !lastIsInProgress ) {
             OnBeginEnigma();
-            lastIsInProgress = true;
             background.GetComponent<SpriteRenderer>().sprite = spriteBackground;
             foreach(GameObject sprite in sprites) 
                 sprite.SetActive(true);    
