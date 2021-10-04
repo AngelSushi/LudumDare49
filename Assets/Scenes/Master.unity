@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &37106164
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 1
+  audioDoor: {fileID: 0}
 --- !u!1 &87158956
 GameObject:
   m_ObjectHideFlags: 0
@@ -6521,6 +6523,17 @@ MonoBehaviour:
   codeId: 0000000001000000
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &250087682
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,6 +6782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!61 &251474404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7090,7 +7104,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7274475, y: 1.1543627}
+  m_Offset: {x: 0.7274475, y: 1.1238632}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7101,7 +7115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7605896, y: 0.7418957}
+  m_Size: {x: 0.7605896, y: 0.68089676}
   m_EdgeRadius: 0
 --- !u!4 &311725762
 Transform:
@@ -7506,6 +7520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &385453801
 GameObject:
   m_ObjectHideFlags: 0
@@ -16465,6 +16480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!61 &663461668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19435,6 +19451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &791476346
 GameObject:
   m_ObjectHideFlags: 0
@@ -19664,6 +19681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!61 &820009798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20333,6 +20351,17 @@ MonoBehaviour:
   codeId: 0000000001000000
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &925074398
 GameObject:
   m_ObjectHideFlags: 0
@@ -22882,6 +22911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 6faa14a747ae38041a75f66130a81ca2, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &1376067032
 GameObject:
   m_ObjectHideFlags: 0
@@ -26697,6 +26727,17 @@ MonoBehaviour:
   codeId: 
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1749624747
 GameObject:
   m_ObjectHideFlags: 0
@@ -27066,6 +27107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
   openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &1815109213
 GameObject:
   m_ObjectHideFlags: 0
