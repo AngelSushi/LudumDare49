@@ -23,11 +23,14 @@ public class WorldController : MonoBehaviour {
         if(!isInGhost && !lastWorld) {
             secondWorldParent.SetActive(false);
             ghostEffect.SetActive(false);
+            Audio_Ghost.Stop();
         }
 
         if(isInGhost && lastWorld) {
             secondWorldParent.SetActive(true);
             ghostEffect.SetActive(true);
+            
+            Audio_Ghost.PlayOneShot(audioGhost);
         }
         
 
@@ -37,7 +40,8 @@ public class WorldController : MonoBehaviour {
     public void OnGhost(InputAction.CallbackContext e) {
         if(e.started)  {
             isInGhost = !isInGhost;
-            Audio_Ghost.PlayOneShot(audioGhost);
+           
         }
+       
     }
 }
