@@ -41,6 +41,22 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ghost"",
+                    ""type"": ""Button"",
+                    ""id"": ""37fe4108-5c8c-48cb-a663-89df19c7cc1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Mind"",
+                    ""type"": ""Button"",
+                    ""id"": ""51c272bb-4923-480f-b943-e2cfc0a52e9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -186,6 +202,39 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff5e0c67-42c4-4102-8bbb-319bbfdad114"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ghost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b71bf401-865c-4fef-bc00-5a6fdf3fcd45"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ghost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f620259e-f06c-4c16-b691-7f7c2de4a07f"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mind"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -225,6 +274,8 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
+        m_Player_Ghost = m_Player.FindAction("Ghost", throwIfNotFound: true);
+        m_Player_Mind = m_Player.FindAction("Mind", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -277,6 +328,8 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Click;
+    private readonly InputAction m_Player_Ghost;
+    private readonly InputAction m_Player_Mind;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
@@ -284,6 +337,8 @@ public class @InputControls : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Click => m_Wrapper.m_Player_Click;
+        public InputAction @Ghost => m_Wrapper.m_Player_Ghost;
+        public InputAction @Mind => m_Wrapper.m_Player_Mind;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +357,12 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Click.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
+                @Ghost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Ghost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Ghost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGhost;
+                @Mind.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
+                @Mind.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
+                @Mind.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMind;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -315,6 +376,12 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @Ghost.started += instance.OnGhost;
+                @Ghost.performed += instance.OnGhost;
+                @Ghost.canceled += instance.OnGhost;
+                @Mind.started += instance.OnMind;
+                @Mind.performed += instance.OnMind;
+                @Mind.canceled += instance.OnMind;
             }
         }
     }
@@ -342,5 +409,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
+        void OnGhost(InputAction.CallbackContext context);
+        void OnMind(InputAction.CallbackContext context);
     }
 }

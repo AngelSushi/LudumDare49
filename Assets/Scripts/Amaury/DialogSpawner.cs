@@ -9,12 +9,21 @@ public class DialogSpawner : MonoBehaviour {
 
     private bool collide;
 
-    private void OnTriggerEnter2D(Collider2D hit) {
+    private void OnTriggerStay2D(Collider2D hit) {
         if(!dialogController.isInDialog) {
-            foreach(Dialog dialog in dialogController.dialogs.dialogs) {
-                if(hit.gameObject.tag == dialog.Tag) {
-                    collide = true;
-                    dialogName = dialog.Name;
+            foreach(Dialog listDialog in dialogController.dialogs.dialogs) {
+                if(!listDialog.isFinish && hit.gameObject.tag == listDialog.Tag) {
+                    if(listDialog.NeedInteraction) {
+                        collide = true;
+                        dialogName = listDialog.Name;
+                    }
+                    else {
+                        collide = false;
+                        Dialog dialog = dialogController.GetDialogByName(listDialog.Name);
+                        dialogController.currentDialog = dialog;
+                        dialogController.isInDialog = true;
+                        StartCoroutine(dialogController.ShowText(dialog.Content[0],dialog.Content.Length));                }
+                    
                 }
             }
         }
