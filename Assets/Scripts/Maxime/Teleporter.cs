@@ -14,9 +14,9 @@ public class Teleporter : MonoBehaviour
     private int speedLost = 5;
     private float speedDuration = 1f;
 
-    private AudioSource Audio_Tp;
+    public AudioSource Audio_Tp;
 
-    [SerializeField] private AudioClip audioTp = null;
+    [SerializeField] private AudioClip audioTp;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class Teleporter : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Teleporter"))
         {
-            StartCoroutine(TimeToTeleport());
+                StartCoroutine(TimeToTeleport());
 
             movePlayer.moveSpeed -= speedLost;
             StartCoroutine(RecupSpeed(speedLost, speedDuration));

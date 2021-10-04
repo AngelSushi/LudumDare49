@@ -50,7 +50,6 @@ public class FormEnigma : Enigma {
 
             int count = 0;
             foreach(int i in secretCode.Keys) {
-                Debug.Log("i:" + i + " type: " + secretCode[i]);
                 numbersObj[count].GetComponent<SpriteRenderer>().sprite = numbers[i];
                 count++;
             }
@@ -66,15 +65,17 @@ public class FormEnigma : Enigma {
     }
 
     public override void OnBeginEnigma() {
-        player.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        player.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         Cursor.visible = true;
+
+        Debug.Log("uuuuuber");
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true);    
     }
 
     public override void OnEndEnigma() {
         Cursor.visible = false;
-        player.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        player.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         isInProgress = false;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true); 
@@ -91,9 +92,11 @@ public class FormEnigma : Enigma {
     private void ChangeSpriteState(bool state) {
          foreach(GameObject obj in player.inventory.possededObjects) {
             TakeObject myObject = obj.GetComponent<TakeObject>();
+            Debug.Log("result: " + (objectsId.Contains(myObject.id)));
             if(myObject.enigmaID == enigmaID && objectsId.Contains(myObject.id))
                 myObject.relatedSprite.SetActive(true);
         }
+
     }
   
 
@@ -139,16 +142,6 @@ public class FormEnigma : Enigma {
         }
 
         return true;
-    }
-
-    public void OnMoveCursor(InputAction.CallbackContext e) {
-        if((e.started || e.performed) && isInProgress && !isFinish && isAvailable) {
-            moveCursor = e.ReadValue<Vector2>();
-            Cursor.visible = false;
-            cursor.SetActive(true);
-            Vector2 pos = new Vector2(transform.position.x,transform.position.y);
-            cursor.transform.Translate(moveCursor * 25 * Time.deltaTime);
-        }
     }
 
     
