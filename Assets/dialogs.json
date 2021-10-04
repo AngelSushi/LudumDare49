@@ -240,7 +240,7 @@
           "Name":"Keys",
           "Content":[
              "So our killer has acces to all the keys? ",
-             "that doesn't sounds good"
+             "that doesn't sounds good "
           ],
           "Texture":"paniqué",
           "Tag":"Keys"
@@ -428,7 +428,7 @@
              "Why do you live when I'm dead.. "
           ],
           "Texture":"ghost_m1_2",
-          "Tag":"GhostInTheBed1_sentence2"
+          "Tag":"GhostInTheBed1_sentence3"
        },
        {
           "Author":"System",
@@ -437,7 +437,7 @@
              "I was so happy "
           ],
           "Texture":"ghost_f1_1",
-          "Tag":"GhostInTheBed2_sentence2"
+          "Tag":"GhostInTheBed2_sentence3"
        },
        {
           "Author":"System",

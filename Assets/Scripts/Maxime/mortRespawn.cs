@@ -4,50 +4,50 @@ using UnityEngine;
 
 public class mortRespawn : MonoBehaviour
 {
-    public GameObject screamer;
+    public GameObject ObjectToDestroy;
+   
     private Transform target;
-    public Animator fadeSystem;
-    public Animator Player;
+    
+   
+    public Animator Enemy;
 
-    public void OnPlayerScream()
+    private AudioSource Audio_SCREAM;
+
+    [SerializeField] private AudioClip audioSCREAM = null;
+
+    private void Awake()
     {
-
-        screamer.SetActive(true);
-
-        Debug.Log(screamer);
+        Audio_SCREAM = GetComponent<AudioSource>();
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Player")
         {
-            OnPlayerScream();
-            StartCoroutine(loadPlayerSpawn());
+            Audio_SCREAM.PlayOneShot(audioSCREAM);
+            
+          
             StartCoroutine(TimeToDie(col));
-            StartCoroutine(TimeToScream());
+           
+            Enemy.SetBool("DieEnemy",true);
 
-            Player.SetTrigger("DiePlayer");
+
+
+            GameObject.Destroy(ObjectToDestroy, 2.0f);
         }
      
     }
    
-    public IEnumerator loadPlayerSpawn()
-    {
-        fadeSystem.SetTrigger("FadeIn");
-        yield return new WaitForSeconds(1f);
-    }
+  
 
     public IEnumerator TimeToDie(Collider2D col)
     {
         yield return new WaitForSeconds(1f);
         col.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+        
     }
 
-    public IEnumerator TimeToScream()
-    {
-        
-        yield return new WaitForSeconds(0.5f);
-        OnPlayerScream();
-        screamer.SetActive(false);
-    }
+
+
 }

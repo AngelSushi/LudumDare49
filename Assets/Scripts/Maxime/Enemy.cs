@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator WaitToStep()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
        
