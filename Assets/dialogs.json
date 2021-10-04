@@ -26,7 +26,7 @@
           "Name":"CutScene2",
           "Content":[
              "At least, it's not going to be hard to find proofs ",
-             "Ok buddy, do what you are the best for "
+             "Ok buddy, do what you do best "
           ],
           "Texture":"résolu",
           "Tag":"CutScene2"
@@ -53,7 +53,7 @@
           "Author":"System",
           "Name":"Ground",
           "Content":[
-             "lot of blood.. "
+             "Lots of blood.. "
           ],
           "Texture":"pensif",
           "Tag":"Ground"
@@ -80,7 +80,7 @@
           "Author":"System",
           "Name":"FastFood",
           "Content":[
-             "Shitty fast food, it may not even have to be poisoned to kill them "
+             "Shitty fast food, it may not even have been poisoned to kill them "
           ],
           "Texture":"pensif",
           "Tag":"FastFood"
@@ -89,7 +89,7 @@
           "Author":"System",
           "Name":"Forks",
           "Content":[
-             "those knifes and forks are bloody "
+             "Those knifes and forks are bloody "
           ],
           "Texture":"pensif",
           "Tag":"Forks"
@@ -107,7 +107,7 @@
           "Author":"System",
           "Name":"Ghost1_sentence1",
           "Content":[
-             "Everything was fine, suddenly the lights turned off, and after... after? "
+             "Everything was fine, suddenly the lights turned off, and after... after ? "
           ],
           "Texture":"ghost_m1_1",
           "Tag":"Ghost1_sentence1",
@@ -144,7 +144,7 @@
           "Author":"System",
           "Name":"Enigma1_right",
           "Content":[
-             "Ok so this asshole turned off the lights and then kills them all sneakly with a knife. ",
+             "Ok so this asshole turned off the lights and then kills them all sneakily with a knife. ",
              "He had planned his shot ",
              "Let's check upstairs now "
           ],
@@ -229,7 +229,7 @@
           "Author":"System",
           "Name":"GhostInTheBed2",
           "Content":[
-             "I'm totally sure I locked the doors.. How could he oppened them? "
+             "I'm totally sure I locked the doors.. How could he open them? "
           ],
           "Texture":"ghost_m3_1",
           "Tag":"GhostInTheBed2",
@@ -239,7 +239,7 @@
           "Author":"System",
           "Name":"Keys",
           "Content":[
-             "So our killer has acces to all the keys? ",
+             "So our killer has access to all the keys? ",
              "that doesn't sounds good"
           ],
           "Texture":"paniqué",
@@ -259,7 +259,7 @@
           "Name":"Handle",
           "Content":[
              "So weird, why is it there? ",
-             "An unforseen Mister criminal? "
+             "Something unforeseen Mister criminal? "
           ],
           "Texture":"incompréhension",
           "Tag":"Handle"
@@ -323,9 +323,9 @@
           "Author":"System",
           "Name":"Electric_sentence1",
           "Content":[
-             "It's a code, so that means only someone who knew it could have turned off the lights ",
+             "It's a code, which means only someone who knew it could have turned off the lights ",
              "Someone who got access to all the keys and that knows the code.. it must be the resident ",
-             "this monster invited these people to kill them all.. "
+             "This monster invited these people to kill them all.. "
           ],
           "Texture":"saoulé_énervé",
           "Tag":"Electric_sentence1"
@@ -343,9 +343,9 @@
           "Author":"System",
           "Name":"Electric_sentence2",
           "Content":[
-             "lights are back and the keys to the last room were just there",
-             "finally some good news.. ",
-             "I wanna know what kind of freak could do that "
+             "Lights are back and the keys to the last room were just there",
+             "Finally some good news.. ",
+             "I wanna know what kind of freak would do that "
           ],
           "Texture":"saoulé",
           "Tag":"Electric_sentence2"
@@ -425,7 +425,7 @@
           "Author":"System",
           "Name":"GhostInTheBed1_sentence2",
           "Content":[
-             "Why do you live when I'm dead.. "
+             "Why are you alive when I'm dead.. "
           ],
           "Texture":"ghost_m1_2",
           "Tag":"GhostInTheBed1_sentence2"
