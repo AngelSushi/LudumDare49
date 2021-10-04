@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nicolas/MenuPrincipale.unity
     guid: 3302a414c1d3db74c94a43099c96011a
+  - enabled: 1
+    path: Assets/Scenes/Master.unity
+    guid: 7e47a242916793341a62b47063fa2c46
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a9218d629cadeff4e84e15448a640a17,
       type: 2}
