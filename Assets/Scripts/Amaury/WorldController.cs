@@ -10,7 +10,14 @@ public class WorldController : MonoBehaviour {
     public GameObject ghostEffect;
 
     private bool lastWorld;
+    private AudioSource Audio_Ghost;
 
+    [SerializeField] private AudioClip audioGhost = null;
+
+    private void Awake()
+    {
+        Audio_Ghost = GetComponent<AudioSource>();
+    }
     void Update() {
         
         if(!isInGhost && !lastWorld) {
@@ -30,6 +37,7 @@ public class WorldController : MonoBehaviour {
     public void OnGhost(InputAction.CallbackContext e) {
         if(e.started)  {
             isInGhost = !isInGhost;
+            Audio_Ghost.PlayOneShot(audioGhost);
         }
     }
 }
