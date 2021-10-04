@@ -14,13 +14,13 @@ public abstract class Enigma : CoroutineSystem {
 
     public int actionEnd; // 0 = Ouverture Porte ; 1 = Changement Light
     public GameObject attachedObject;
+    public GameObject cursor;
 
-    void Update() {
-
+    public override void Update() {
         if(isInProgress && !lastIsInProgress) {
             OnBeginEnigma();
             foreach(GameObject sprite in sprites) 
-                sprite.SetActive(true);
+                sprite.SetActive(true);    
         }
 
         if(isFinish && !lastIsFinish) {
