@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 7d76deb2f37db104cbc540809eed0407
+guid: 7df23b0d4affb8f418f96585db1f82de
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7688941500266182728
-    second: mc_walkcycle_front_0
-  - first:
-      213: -1537970952661198693
-    second: mc_walkcycle_front_1
-  - first:
-      213: 2772478058034163096
-    second: mc_walkcycle_front_2
-  - first:
-      213: -3556176237597658428
-    second: mc_walkcycle_front_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,91 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: mc_walkcycle_front_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 38
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 848ff168e8b94ba60800000000000000
-      internalID: 7688941500266182728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mc_walkcycle_front_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 38
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9892cb219708aae0800000000000000
-      internalID: -1537970952661198693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mc_walkcycle_front_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89de0b4ca12d97620800000000000000
-      internalID: 2772478058034163096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mc_walkcycle_front_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c27e47ad8ce5aec0800000000000000
-      internalID: -3556176237597658428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

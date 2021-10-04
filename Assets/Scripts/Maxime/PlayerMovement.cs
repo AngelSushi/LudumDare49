@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    //public Animator animator;
+    public Animator animator;
 
     public bool isInEnigma;
     public DialogController dialogController;
@@ -22,8 +22,38 @@ public class PlayerMovement : MonoBehaviour
     {
         float charaterVelocity = Mathf.Abs(rb.velocity.x);
 
+        animator.SetBool("moove",movement != Vector2.zero);
+        animator.SetFloat("horizontal",movement.x);
+        animator.SetFloat("vertical",movement.y); 
 
-        //animator.SetFloat("Speed", charaterVelocity);
+        float horizontal = animator.GetFloat("horizontal");
+        float vertical = animator.GetFloat("vertical");
+
+        if(horizontal > 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if(horizontal < 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        if(vertical > 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(3).gameObject.SetActive(true);
+        }
+        else if(vertical < 0) {
+            for(int i = 0;i<4;i++) 
+                transform.GetChild(i).gameObject.SetActive(false);
+            
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
@@ -35,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     public void OnMove(InputAction.CallbackContext e) {
-        Debug.Log("enter");
         movement = e.ReadValue<Vector2>().normalized;
     }
 }
