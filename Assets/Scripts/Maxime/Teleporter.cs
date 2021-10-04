@@ -60,7 +60,7 @@ public class Teleporter : MonoBehaviour
     public IEnumerator TimeToTeleport()
     {
 
-     //   Audio_Tp.PlayOneShot(audioTp);
+       Audio_Tp.PlayOneShot(audioTp);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         
@@ -72,7 +72,7 @@ public class Teleporter : MonoBehaviour
 
     public IEnumerator TimeToTeleport2()
     {
-
+        Audio_Tp.PlayOneShot(audioTp);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         Player.transform.position = StartTeleporter.transform.position;
