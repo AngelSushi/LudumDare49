@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 movement;
-
+    public SpriteRenderer spriteRenderer;
     //public Animator animator;
 
     public bool isInEnigma;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float charaterVelocity = Mathf.Abs(rb.velocity.x);
-
+        Flip(movement.x);
 
         //animator.SetFloat("Speed", charaterVelocity);
     }
@@ -31,7 +31,24 @@ public class PlayerMovement : MonoBehaviour
         if(!isInEnigma && !dialogController.isInDialog)
             rb.velocity = movement * moveSpeed;
     }
+    void Flip(float charaterVelocity)
+    {
+        if (charaterVelocity > 0.1f)
+        {
 
+            spriteRenderer.flipX = false;
+            
+
+            Debug.Log("TOURNE");
+
+        }
+        else if (charaterVelocity < -0.1f)
+        {
+
+            spriteRenderer.flipX = true;
+        }
+
+    }
 
 
     public void OnMove(InputAction.CallbackContext e) {
