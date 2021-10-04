@@ -829,6 +829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openDoor: {fileID: 21300000, guid: 7f5f7eb2fae5b3443a70892cd94dda3e, type: 3}
+  openByEnigma: 0
+  audioDoor: {fileID: 0}
 --- !u!1 &227921552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,9 +1201,13 @@ MonoBehaviour:
   - {fileID: 671536868}
   - {fileID: 270608737}
   player: {fileID: 1837853083}
+  lastIsInProgress: 0
+  lastIsFinish: 0
   actionEnd: 0
   attachedObject: {fileID: 887658913}
   cursor: {fileID: 0}
+  background: {fileID: 0}
+  spriteBackground: {fileID: 0}
   enigmaID: 1
   maxFormCount: 0
   maxCodeSize: 2
@@ -1211,6 +1217,17 @@ MonoBehaviour:
   codeId: 0000000001000000
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &283979662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1912,77 @@ Transform:
   m_Father: {fileID: 1837853087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.827}
+--- !u!1 &548531342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548531345}
+  - component: {fileID: 548531344}
+  - component: {fileID: 548531343}
+  m_Layer: 0
+  m_Name: TriggerBoolFin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &548531343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548531342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c56b9ad919e4664cabd050061302c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSceneFin: {fileID: 1218532706}
+--- !u!61 &548531344
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548531342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &548531345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548531342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73658496, y: 4.0860176, z: -363.88425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586237825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,9 +6228,13 @@ MonoBehaviour:
   - {fileID: 910401659}
   - {fileID: 1747306358}
   player: {fileID: 1837853083}
+  lastIsInProgress: 0
+  lastIsFinish: 0
   actionEnd: 0
   attachedObject: {fileID: 887658913}
   cursor: {fileID: 0}
+  background: {fileID: 0}
+  spriteBackground: {fileID: 0}
   enigmaID: 1
   maxFormCount: 0
   maxCodeSize: 2
@@ -6152,6 +6244,17 @@ MonoBehaviour:
   codeId: 0000000001000000
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1009845575
 GameObject:
   m_ObjectHideFlags: 0
@@ -6863,6 +6966,78 @@ Transform:
   m_Father: {fileID: 1225397330}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1218532706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218532709}
+  - component: {fileID: 1218532708}
+  - component: {fileID: 1218532707}
+  m_Layer: 0
+  m_Name: TriggerSceneFin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1218532707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218532706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dedc298921023489476e757c257d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToGo: SceneFinJeu
+  isFinished: 0
+--- !u!61 &1218532708
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218532706}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1218532709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218532706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.44, y: -1.41, z: -363.73865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225397329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +7086,7 @@ MonoBehaviour:
   secondWorldParent: {fileID: 1214419283}
   isInGhost: 0
   ghostEffect: {fileID: 1023366223}
+  audioGhost: {fileID: 0}
 --- !u!1 &1237415012
 GameObject:
   m_ObjectHideFlags: 0
@@ -22683,9 +22859,13 @@ MonoBehaviour:
   - {fileID: 62727457}
   - {fileID: 923671265}
   player: {fileID: 1837853083}
+  lastIsInProgress: 0
+  lastIsFinish: 0
   actionEnd: 1
   attachedObject: {fileID: 1707025346}
   cursor: {fileID: 0}
+  background: {fileID: 0}
+  spriteBackground: {fileID: 0}
   enigmaID: 0
   maxFormCount: 6
   maxCodeSize: 3
@@ -22695,6 +22875,17 @@ MonoBehaviour:
   codeId: 
   findCode: ffffffffffffffffffffffff
   isMovingObj: 0
+  numbersObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numbers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1829220301
 GameObject:
   m_ObjectHideFlags: 0
@@ -22769,6 +22960,7 @@ MonoBehaviour:
   isInEnigma: 0
   dialogController: {fileID: 1259347571}
   inventory: {fileID: 1837853088}
+  audioWalk: {fileID: 0}
 --- !u!58 &1837853084
 CircleCollider2D:
   m_ObjectHideFlags: 0

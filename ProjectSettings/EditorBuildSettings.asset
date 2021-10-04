@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maxime/SCENE/SCENEMax.unity
     guid: 29ca8069082533e42b0b70efa9dc3a93
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Nicolas/MenuPrincipale.unity
+    guid: 3302a414c1d3db74c94a43099c96011a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a9218d629cadeff4e84e15448a640a17,
       type: 2}
