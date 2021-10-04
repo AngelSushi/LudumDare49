@@ -14,7 +14,14 @@ public class Teleporter : MonoBehaviour
     private int speedLost = 5;
     private float speedDuration = 1f;
 
+    private AudioSource Audio_Tp;
 
+    [SerializeField] private AudioClip audioTp = null;
+
+    private void Awake()
+    {
+        Audio_Tp = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
    
@@ -50,19 +57,21 @@ public class Teleporter : MonoBehaviour
     {
         yield return new WaitForSeconds(speedDuration);
         movePlayer.moveSpeed += speedLost;
+       
 
     }
 
     public IEnumerator TimeToTeleport()
     {
 
-        
+        Audio_Tp.PlayOneShot(audioTp);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         
         Player.transform.position = TeleportTo.transform.position;
-        
-        
+      
+
+
     }
 
     public IEnumerator TimeToTeleport2()
