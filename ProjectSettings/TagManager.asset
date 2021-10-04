@@ -45,6 +45,8 @@ TagManager:
   - GhostInTheBed2_sentence2
   - FemaleGhost2
   - Out
+  - Teleporter
+  - SecondTeleporter
   layers:
   - Default
   - TransparentFX
