@@ -74,7 +74,6 @@ public class FormEnigma : Enigma {
 
     public override void OnEndEnigma() {
         Cursor.visible = false;
-        player.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         isInProgress = false;
         if(obtainingType == ObtaningType.OBJECT) 
            ChangeSpriteState(true); 
