@@ -24,58 +24,29 @@ public class FormCollision : MonoBehaviour {
             Vector3 cursor = Mouse.current.position.ReadValue();
             cursorPos = Camera.main.ScreenToWorldPoint(new Vector3(cursor.x,cursor.y,Camera.main.nearClipPlane));
 
-            if(cursorPos != lastCursorPos) {
-                Cursor.visible = true;
-                enigma.cursor.SetActive(false);
-                if(isMooving) 
-                    transform.position = cursorPos;
-                else if(!collide) {
-                    transform.position = originalPos;
-                    collide = false;
-                }
-            }
-            else {
-                Cursor.visible = false;
-                enigma.cursor.SetActive(true);
-                if(isMooving) 
-                    transform.position = enigma.cursor.transform.position;
-                else if(!collide) {
-                    transform.position = originalPos;
-                    collide = false;
-                }
-            }
-
-            
-            
-
+            if(isMooving) 
+                transform.position = cursorPos;
+            else if(!isMooving && !isPlaced && !collide) 
+                transform.position = originalPos;         
+        
             lastCursorPos = cursorPos;
         }
     }
 
     public void OnClick(InputAction.CallbackContext e) {
-        Debug.Log("lol");
         if(e.started && enigma.isInProgress) {
-            Debug.Log("LOOOOOOOOOOOOOL: " + enigma.cursor.activeSelf);
-            if(!enigma.cursor.activeSelf) {
-                if(transform.position.x - 0.5f < cursorPos.x && transform.position.x + 0.5f > cursorPos.x) {
-                    if(transform.position.y - 0.5f < cursorPos.y && transform.position.y + 0.5f > cursorPos.y) 
-                        isMooving = true; 
-                }   
-            }
-            else {
-                Debug.Log("cursor");
-                if(transform.position.x - 0.5f < enigma.cursor.transform.position.x && transform.position.x + 0.5f > enigma.cursor.transform.position.x) {
-                    if(transform.position.y - 0.5f < enigma.cursor.transform.position.y && transform.position.y + 0.5f > enigma.cursor.transform.position.y) 
-                        isMooving = true; 
-                }
-            }
+            if(transform.position.x - 0.5f < cursorPos.x && transform.position.x + 0.5f > cursorPos.x) {
+                if(transform.position.y - 0.5f < cursorPos.y && transform.position.y + 0.5f > cursorPos.y) 
+                    isMooving = true; 
+            }   
+            
         }
 
         if(e.canceled && enigma.isInProgress) 
             isMooving = false;    
     }
 
-    private void OnCollisionStay2D(Collision2D hit) {
+    private void OnTriggerStay2D(Collider2D hit) {
         if(hit.gameObject.tag == "ResultArea" && enigma.isInProgress) {
             if(!isMooving && !isPlaced) {
                 int index = hit.gameObject.transform.GetSiblingIndex();
